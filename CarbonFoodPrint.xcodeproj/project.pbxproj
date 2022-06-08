@@ -14,6 +14,7 @@
 		C44AD82E28511E9F004A8A11 /* CarbonFoodPrintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD82D28511E9F004A8A11 /* CarbonFoodPrintTests.swift */; };
 		C44AD83828511E9F004A8A11 /* CarbonFoodPrintUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD83728511E9F004A8A11 /* CarbonFoodPrintUITests.swift */; };
 		C44AD83A28511E9F004A8A11 /* CarbonFoodPrintUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD83928511E9F004A8A11 /* CarbonFoodPrintUITestsLaunchTests.swift */; };
+		C4DB971C285127C100D25BA8 /* display.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB971B285127C100D25BA8 /* display.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C44AD83728511E9F004A8A11 /* CarbonFoodPrintUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintUITests.swift; sourceTree = "<group>"; };
 		C44AD83928511E9F004A8A11 /* CarbonFoodPrintUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C44AD84828511F3C004A8A11 /* .gitattributes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitattributes.md; sourceTree = "<group>"; };
+		C4DB971B285127C100D25BA8 /* display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = display.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
+				C4DB971B285127C100D25BA8 /* display.swift */,
 			);
 			path = CarbonFoodPrint;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
+				C4DB971C285127C100D25BA8 /* display.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
