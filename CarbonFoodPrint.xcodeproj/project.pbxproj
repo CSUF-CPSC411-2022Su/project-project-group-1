@@ -44,6 +44,7 @@
 		C44AD83328511E9F004A8A11 /* CarbonFoodPrintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarbonFoodPrintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44AD83728511E9F004A8A11 /* CarbonFoodPrintUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintUITests.swift; sourceTree = "<group>"; };
 		C44AD83928511E9F004A8A11 /* CarbonFoodPrintUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C44AD84828511F3C004A8A11 /* .gitattributes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitattributes.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		C44AD81028511E9E004A8A11 = {
 			isa = PBXGroup;
 			children = (
+				C44AD84828511F3C004A8A11 /* .gitattributes.md */,
 				C44AD81B28511E9E004A8A11 /* CarbonFoodPrint */,
 				C44AD82C28511E9F004A8A11 /* CarbonFoodPrintTests */,
 				C44AD83628511E9F004A8A11 /* CarbonFoodPrintUITests */,
