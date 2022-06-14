@@ -14,11 +14,14 @@ struct ContentView: View {
         
         
         HStack {
+            //Text("TEST")
+                //.modifier(ContentText())
+            
             Button(action: {
             print("Was clicked")
             }) {
             Text("MENU")
-            }.padding().border(Color.black)
+            }.padding().modifier(ContentText())  //.border(Color.black)
             
         }
         
@@ -27,12 +30,12 @@ struct ContentView: View {
                 print("Was clicked")
             }) {
                 Text("SCAN MODE")
-            }.padding().border(Color.black)
+            }.padding().modifier(ContentText())   //.border(Color.black)
             Button(action: {
                 print("Was clicked")
             }) {
                 Text("AR MODE")
-            }.padding().border(Color.black)
+            }.padding().modifier(ContentText())   //.border(Color.black)
         }
     }
 }
@@ -42,3 +45,14 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct ContentText: ViewModifier {
+   func body(content: Content) -> some View {
+        content
+           .font(.custom("Courier New", size: 30))
+           .foregroundColor(Color.white)
+           .padding()
+                      .background(Color.black)
+                      .cornerRadius(10)
+               }
+           }
