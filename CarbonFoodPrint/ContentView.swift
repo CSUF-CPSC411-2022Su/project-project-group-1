@@ -32,6 +32,7 @@ struct ContentView: View {
             }) {
                 Text("AR MODE")
             }.padding()
+            Text("Screen - Feature")
         }
     }
 }
