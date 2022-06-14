@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView
+        {
+            //since i want to do tab view, make sure each
+            //question can be seen with each swipe
+            Text("First Question")
+            Text("This can be second ?")
+            Text("Third Question")
+        }
+//        Text("Hello from Weekly!!").padding()
+        .tabViewStyle(.page)
+        .indexViewStyle(.page(backgroundDisplayMode: .always))
+        DailyReport()
     }
 }
 
