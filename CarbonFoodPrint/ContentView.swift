@@ -9,8 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        //Text("Hello, world!")
+            //.padding()
+        
+        
+        HStack {
+            Button(action: {
+            print("Secret message")
+            }) {
+            Text("MENU")
+            }.padding()
+        }
+        
+        VStack {
+            Button(action: {
+                print("Secret message")
+            }) {
+                Text("SCAN MODE")
+            }.padding()
+            Button(action: {
+                print("Secret message")
+            }) {
+                Text("AR MODE")
+            }.padding()
+        }
     }
 }
 
