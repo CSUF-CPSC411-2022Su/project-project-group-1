@@ -15,46 +15,51 @@ enum Impact {
     case Antibiotics
 }
 
+class Display {
+    // contains the impact and the percentage with respect to their order ingredients
+    var factor = [Impact: UInt]()
+    
+    init(factor: [Impact: UInt]) {
+        self.factor = factor
+    }
+    
+}
+
 struct DisplayView: View {
+    var display = Display(factor: [
+        .Carbon: 5,
+        .Water: 40,
+        .Soil: 30,
+        .Antibiotics: 25
+    ])
+    @State var percentage: [UInt] = [5, 40, 30, 25]
+
     var body: some View {
-        VStack(spacing: 10) {
-           Text("Your Impact on the World")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color.brown)
-            ImpactBoxView(factor: .Carbon, percentage: 60)
-            ImpactBoxView(factor: .Water, percentage: 15)
-            ImpactBoxView(factor: .Soil, percentage: 20)
-            ImpactBoxView(factor: .Antibiotics, percentage: 5)
+        GeometryReader { geometry in
+            VStack() {
+               Text("Your Impact on the World")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.brown)
+                ImpactView(text: "Carbon Emissions Reduced", percentage: $percentage[0])
+                ImpactView(text: "Water Saved", percentage: $percentage[1])
+                ImpactView(text: "Soil Quality Improved", percentage: $percentage[2])
+                ImpactView(text: "Antibiotics Mitigated", percentage: $percentage[3])
+            }.frame(height: geometry.size.height / 3)
         }
     }
 }
 
-struct ImpactBoxView: View {
-    // Constructs Impact Boxes
-    var factor: Impact
-    var percentage: UInt
-
-    init(factor: Impact, percentage: UInt) {
-        self.factor = factor
-        self.percentage = percentage
-    }
-
-    func impactToString() -> String {
-        switch factor {
-            case .Carbon: return "Carbon Emissions Reduced"
-            case .Water: return "Water Saved"
-            case .Soil: return "Soil Quality Improved"
-            case .Antibiotics: return "Antibiotics Mitigated"
-        }
-    }
+struct ImpactView: View {
+    var text: String
+    @Binding var percentage: UInt
     
     var body: some View {
         HStack {
             Button(action: {
                 print("Impact: \(percentage)")
             }) {
-                Text(impactToString())
+                Text(text)
             }
         }
     }
