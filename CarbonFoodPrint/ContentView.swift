@@ -15,7 +15,7 @@ struct ContentView: View {
         
         HStack {
             Button(action: {
-            print("Secret message")
+            print("Was clicked")
             }) {
             Text("MENU")
             }.padding()
@@ -23,12 +23,12 @@ struct ContentView: View {
         
         VStack {
             Button(action: {
-                print("Secret message")
+                print("Was clicked")
             }) {
                 Text("SCAN MODE")
             }.padding()
             Button(action: {
-                print("Secret message")
+                print("Was clicked")
             }) {
                 Text("AR MODE")
             }.padding()
