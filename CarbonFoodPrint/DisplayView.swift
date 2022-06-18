@@ -8,59 +8,67 @@
 import Foundation
 import SwiftUI
 
-enum Impact {
-    case Carbon
-    case Water
-    case Soil
-    case Antibiotics
-}
+struct ElementBox: View {
+    var text: String
 
-class Display {
-    // contains the impact and the percentage with respect to their order ingredients
-    var factor = [Impact: UInt]()
-    
-    init(factor: [Impact: UInt]) {
-        self.factor = factor
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                Rectangle()
+                    .fill(.gray)
+                    .modifier(RectBox())
+                    .frame(width: geometry.size.width * 2 / 3)
+                HStack {
+                    Spacer()
+                    Text(text)
+                        .foregroundColor(.black)
+                    Spacer()
+                }
+            }
+        }
     }
-    
 }
 
 struct DisplayView: View {
-    var display = Display(factor: [
+    @StateObject var info = Display(factor: [
         .Carbon: 5,
         .Water: 40,
         .Soil: 30,
         .Antibiotics: 25
     ])
-    @State var percentage: [UInt] = [5, 40, 30, 25]
+
+    // @State var percentage: [UInt] = [5, 40, 30, 25]
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack() {
-               Text("Your Impact on the World")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.brown)
-                ImpactView(text: "Carbon Emissions Reduced", percentage: $percentage[0])
-                ImpactView(text: "Water Saved", percentage: $percentage[1])
-                ImpactView(text: "Soil Quality Improved", percentage: $percentage[2])
-                ImpactView(text: "Antibiotics Mitigated", percentage: $percentage[3])
-            }.frame(height: geometry.size.height / 3)
+        NavigationView {
+            GeometryReader { geometry in
+                VStack{
+                   Text("Your Impact on the World")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.green)
+                    VStack {
+                        NavigationLink(destination: ResourceView(/* param */)) {
+                            ElementBox(text: "Carbon Emissions Reduced")
+                        }
+                        NavigationLink(destination: ResourceView(/* param */)) {
+                            ElementBox(text: "Water Saved")
+                        }
+                        NavigationLink(destination: ResourceView(/* param */)) {
+                            ElementBox(text: "Soil Quality Improved")
+                        }
+                        NavigationLink(destination: ResourceView(/* param */)) {
+                            ElementBox(text: "Antibiotics Mitigated")
+                        }
+                    }
+                }.frame(height: geometry.size.height / 3)
+            }
         }
     }
 }
 
-struct ImpactView: View {
-    var text: String
-    @Binding var percentage: UInt
-    
+struct ResourceView: View {
     var body: some View {
-        HStack {
-            Button(action: {
-                print("Impact: \(percentage)")
-            }) {
-                Text(text)
-            }
-        }
+        Text("TODO")
     }
 }
