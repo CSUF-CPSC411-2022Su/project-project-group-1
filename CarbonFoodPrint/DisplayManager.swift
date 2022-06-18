@@ -17,9 +17,9 @@ enum Resources {
 
 class Display: ObservableObject {
     // contains the impact and the percentage with respect to their order ingredients
-    @Published var factor = [Resources: UInt]()
+    @Published var info: [Resources: UInt]
     
-    init(factor: [Resources: UInt]) {
-        self.factor = factor
+    init(info: [Resources: UInt]) {
+        self.info = info
     }
 }

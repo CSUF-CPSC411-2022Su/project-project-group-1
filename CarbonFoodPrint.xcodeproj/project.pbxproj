@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C414608D285D7835002A72F5 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414608C285D7835002A72F5 /* DisplayManager.swift */; };
-		C414608F285D7B8B002A72F5 /* DisplayModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414608E285D7B8B002A72F5 /* DisplayModifier.swift */; };
+		C4146091285D86E9002A72F5 /* DisplaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4146090285D86E9002A72F5 /* DisplaySettings.swift */; };
+		C4146093285D8A88002A72F5 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4146092285D8A88002A72F5 /* ResourceView.swift */; };
 		C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */; };
 		C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81E28511E9E004A8A11 /* ContentView.swift */; };
 		C44AD82128511E9F004A8A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44AD82028511E9F004A8A11 /* Assets.xcassets */; };
@@ -38,7 +39,8 @@
 
 /* Begin PBXFileReference section */
 		C414608C285D7835002A72F5 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
-		C414608E285D7B8B002A72F5 /* DisplayModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModifier.swift; sourceTree = "<group>"; };
+		C4146090285D86E9002A72F5 /* DisplaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettings.swift; sourceTree = "<group>"; };
+		C4146092285D8A88002A72F5 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		C44AD81928511E9E004A8A11 /* CarbonFoodPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonFoodPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintApp.swift; sourceTree = "<group>"; };
 		C44AD81E28511E9E004A8A11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,8 +109,9 @@
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
 				C4DB971B285127C100D25BA8 /* DisplayView.swift */,
+				C4146092285D8A88002A72F5 /* ResourceView.swift */,
 				C414608C285D7835002A72F5 /* DisplayManager.swift */,
-				C414608E285D7B8B002A72F5 /* DisplayModifier.swift */,
+				C4146090285D86E9002A72F5 /* DisplaySettings.swift */,
 			);
 			path = CarbonFoodPrint;
 			sourceTree = "<group>";
@@ -268,9 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C414608F285D7B8B002A72F5 /* DisplayModifier.swift in Sources */,
 				C414608D285D7835002A72F5 /* DisplayManager.swift in Sources */,
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
+				C4146093285D8A88002A72F5 /* ResourceView.swift in Sources */,
+				C4146091285D86E9002A72F5 /* DisplaySettings.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
 				C4DB971C285127C100D25BA8 /* DisplayView.swift in Sources */,
 			);
