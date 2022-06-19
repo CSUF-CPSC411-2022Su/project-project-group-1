@@ -18,13 +18,14 @@ import SwiftUI
 
 struct DisplayView: View {
     // The default main page
-    @StateObject var info = Display(info: [
-        .Carbon: 5,
-        .Water: 40,
-        .Soil: 30,
-        .Antibiotics: 25
-    ])
-
+    @StateObject var display = Display()
+    @State private var box = [
+        ElementBox(text: "Carbon Emissions Reduced"),
+        ElementBox(text: "Water Saved"),
+        ElementBox(text: "Soil Quality Improved"),
+        ElementBox(text: "Antibiotics Mitigated")
+    ]
+    
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -34,46 +35,17 @@ struct DisplayView: View {
                         .bold()
                         .foregroundColor(.green)
                     VStack(spacing: 3) {
-                        NavigationLink(destination: ResourceView()) {
-                            ElementBox(text: "Carbon Emissions Reduced")
+                        ForEach(box) { element in
+                            NavigationLink(destination: ResourceView()) {
+                                element
+                            }
                         }
-                        NavigationLink(destination: ResourceView()) {
-                            ElementBox(text: "Water Saved")
-                        }
-                        NavigationLink(destination: ResourceView()) {
-                            ElementBox(text: "Soil Quality Improved")
-                        }
-                        NavigationLink(destination: ResourceView()) {
-                            ElementBox(text: "Antibiotics Mitigated")
-                        }
-                    }.environmentObject(info)
+                    }.environmentObject(display)
                     NavigationLink(destination: InformationView(/* param */)) {
                         Text("Learn More")
                             .font(.callout)
                     }
                 }.frame(height: geometry.size.height / 2)
-            }
-        }
-    }
-}
-
-struct ElementBox: View {
-    var text: String
-
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Rectangle()
-                    .fill(.gray)
-                    .opacity(0.3)
-                    .cornerRadius(4)
-                    .frame(width: geometry.size.width * 6 / 7)
-                HStack {
-                    Spacer()
-                    Text(text)
-                        .foregroundColor(.black)
-                    Spacer()
-                }
             }
         }
     }

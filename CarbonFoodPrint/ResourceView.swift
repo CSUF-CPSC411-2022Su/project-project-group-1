@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ResourceView: View {
-   @EnvironmentObject var info: Display
+    @EnvironmentObject var display: Display
     
     var body: some View {
         Text("Hello")
