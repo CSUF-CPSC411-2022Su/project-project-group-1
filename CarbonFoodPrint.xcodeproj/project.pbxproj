@@ -100,9 +100,9 @@
 			children = (
 				C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */,
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
+				7C10542B28586BE20030CB3B /* DailyWeeklyReport.swift */,
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
-				7C10542B28586BE20030CB3B /* DailyWeeklyReport.swift */,
 			);
 			path = CarbonFoodPrint;
 			sourceTree = "<group>";
