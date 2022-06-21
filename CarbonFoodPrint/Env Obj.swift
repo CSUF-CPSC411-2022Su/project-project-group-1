@@ -32,7 +32,7 @@ struct EnvObj: View {
         NavigationView{
             List{
                 ForEach(Model.dataArray,id:\.self){
-                    result in NavigationLink(destination: NavMenu(), label: {
+                    result in NavigationLink(destination: NavScreen(selectedresult: result), label: {
                         Text(result)
                     })
                 }
@@ -42,7 +42,26 @@ struct EnvObj: View {
     }
 }
 
-struct Env_OBj__bj_Previews: PreviewProvider {
+
+struct NavScreen:View{
+    
+    let selectedresult: String
+    
+    var body: some View{
+        ZStack{
+            Color.white.ignoresSafeArea()
+            Text(selectedresult)
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(.horizontal)
+                .cornerRadius(30)
+                .background(Color.black)
+        }
+    }
+}
+
+
+struct EnvObj_Preview: PreviewProvider {
     static var previews: some View {
         EnvObj()
     }
