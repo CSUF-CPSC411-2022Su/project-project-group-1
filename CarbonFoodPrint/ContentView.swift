@@ -29,7 +29,7 @@ struct ContentView: View {
             Button(action: {
                 print("Was clicked")
             }) {
-                Text("SCAN MODE")
+                Text("SCAN MODE").bold()
             }.padding().modifier(ContentText())   //.border(Color.black)
             Button(action: {
                 print("Was clicked")
