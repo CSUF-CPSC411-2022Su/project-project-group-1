@@ -11,11 +11,11 @@ import SwiftUI
 // 6.2 miles produces 1.97 kg CO2
 // REFERENCE: https://www.co2everything.com/co2e-of/toyota-corolla-2020
 
-class totalCO2
+class totalCO2 : ObservableObject
 {
-    var carType: String
-    var CO2 : Double
-    var milesDriven: Double
+    @Published var carType: String
+    @Published var CO2 : Double
+    @Published var milesDriven: Double
     
     // initializer
     init(carType: String, CO2: Double, milesDriven: Double)
