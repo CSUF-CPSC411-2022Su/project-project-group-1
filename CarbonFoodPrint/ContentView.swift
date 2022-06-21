@@ -12,62 +12,69 @@ struct ContentView: View {
     @State var openMenu = false
     
     var body: some View{
-        GeometryReader { geometry in
-            ZStack(alignment: .leading){
-                HamburgerButton(openMenu: self.$openMenu)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(x: self.openMenu ? 2*(geometry.size.width)/3 : 0)
-                    .disabled(self.openMenu ? true:false)
-                ScreenView()
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                if self.openMenu{
-                    HamburgerMenu()
-                        .frame(width: geometry.size.width*2/3)
-                        .transition(.move(edge: .leading))
+        
+        let slide_close = DragGesture()
+            .onEnded {
+                if $0.translation.width < -100{
+                    withAnimation{
+                        self.openMenu = false
+                    }
                 }
             }
+        
+        
+        return NavigationView{
+            GeometryReader { geometry in
+                ZStack(alignment: .leading){
+                    
+                    ScreenView()
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                    if self.openMenu{
+                        HamburgerMenu()
+                            .frame(width: geometry.size.width*2/3)
+                            .transition(.move(edge: .leading))
+                    }
+                }
+                .gesture(slide_close)
+            }
+            .navigationBarItems(leading: (
+                Button(action: {
+                    withAnimation {
+                        self.openMenu.toggle()
+                    }
+                }){
+                    Image(systemName: "line.horizontal.3")
+                        .imageScale(.large)
+                }
+            ))
         }
     }
 }
 
-struct HamburgerButton : View{
-    
-    @Binding var openMenu: Bool
-    
-    var body: some View{
-        Button(action: {
-            withAnimation{
-                self.openMenu = true}
-        }, label: {
-            Text("Menu")
-                .padding()
-                .foregroundColor(.gray)
-        })
-    }
-}
 
 struct ScreenView: View{
     var body: some View {
         VStack(alignment: .center) {
             Spacer()
-            Text("Product Searched Image Insert")
-                .padding()
-                .background(Color(hue: 1.0, saturation: 0.435, brightness: 0.971))
-            Button(action: {
-                print("Check for Alternatives Action")
-            }, label: {
-                Text("Check Alternatives").foregroundColor(Color.white)
-                    .background(Color(hue: 1.0, saturation: 0.077, brightness: 0.8)).padding()
-            })
+            Image(systemName: "camera.viewfinder")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150, alignment: .center)
             Spacer()
-            Text("Display Alternatives Here")
+            NavigationLink(destination: SearchPage(), label:{
+                Text("Find Alternatives")
+                    .frame(width: 200, height: 40, alignment: .center)
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            } )
             Spacer()
         }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
-}
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
+    }
 }
