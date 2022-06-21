@@ -14,24 +14,18 @@ import Foundation
 
 // Initial Menu (button)
 struct GreenMapsMenuView: View {
-    @State var onClick = false
     var body: some View {
         NavigationView {
             VStack {
-                Text("*** GREENMAPS FEATURE VIEW ***").padding()
-                Button(action: {
-                    print("*** Opening GreenMaps... ***")
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.onClick = true
-                    }
-                }) {
-                    Text("Open GreenMaps!").padding()
-                }
+                Text("*** GREENMAPS FEATURE VIEW ***")
+                    .font(.headline).padding(.bottom, 30)
 
-                //MARK: - NAVIGATION LINKS
-                NavigationLink(destination: GreenMapsSearchView(), isActive: $onClick) {
-                    EmptyView()
+                //MARK: - NAVIGATION LINKS Button
+                NavigationLink(destination: GreenMapsSearchView()) {
+                    Text("Open GreenMaps!").padding()
+                        .modifier(ButtonDesign())
                 }
+                Spacer()
             }
         }
     }
@@ -39,50 +33,56 @@ struct GreenMapsMenuView: View {
 
 // Search Menu (ask for user input)
 struct GreenMapsSearchView: View {
-    @State var country: String = ""
-    @State var city: String = ""
-    @State var state: String = ""
-    @State var zipCode: String = ""
-    @State var withinRange: String = ""
-
-    @State var onClick = false
+    @StateObject var location = CurrentLocation(country: "", state: "", city: "",
+                                                zipCode: "". withinRange: 0)
+    @State var country: String
+    @State var state: String
+    @State var city: String
+    @State var zipCode: String
+    @State var withinRange: String
     
     var body: some View {
-        Text("This is the GreenMaps feature view...").padding()
-        VStack{
-            HStack{
+        VStack {
+            Text("This is the GreenMaps feature view...").padding()
+            Spacer()
+            HStack {
                 Text("Country: ")
                 TextField("choose country...", text: $country)
             }
-            HStack{
-                Text("City: ")
-                TextField("City", text: $city)
-            }
-            HStack{
+            HStack {
                 Text("State: ")
                 TextField("State", text: $state)
             }
-            HStack{
+            HStack {
+                Text("City: ")
+                TextField("City", text: $city)
+            }
+            HStack {
                 Text("Zip Code: ")
                 TextField("ZipCode", text: $zipCode)
             }
-            HStack{
+            HStack {
                 Text("Preferred Range: ")
                 TextField("Miles", text: $withinRange)
             }
-            Button(action: {
-                print("Opening GreenMaps of Business...")
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self.onClick = true
+            Spacer()
+        
+            if let validRange = Int(withinRange) {
+                location.country = country
+                location.state = state
+                location.city = city
+                location.zipCode = zipCode
+                location.withinRange = validRange
+                
+                // NAVIGATION LINKS
+                NavigationLink(destination: GreenMapsView()) {
+                    Text("Search!").padding()
+                        .modifier(ButtonDesign())
                 }
-            }) {
-                Text("Search!").padding()
+            } else {
+                Text("This location is not valid. Please add valid location information.")
             }
-            
-            //MARK: - NAVIGATION LINKS
-            NavigationLink(destination: GreenMapsView(), isActive: $onClick) {
-                EmptyView()
-            }
+            Spacer()
         }
     }
 }
@@ -92,5 +92,26 @@ struct GreenMapsSearchView: View {
 struct GreenMapsView: View {
     var body: some View {
         Text("Results for closest carbon footprints...")
+    }
+}
+
+
+class CurrentLocation: ObservableObject {
+    @Published var country: String
+    @Published var state: String
+    @Published var city: String
+    @Published var zipCode: String
+    @Published var withinRange: Int
+    
+    init() {
+        
+    }
+    
+    init(country: String, state: String, city: String, zipCode: String, withinRange: Int) {
+        self.country = country
+        self.state = state
+        self.city = city
+        self.zipCode = zipCode
+        self.withinRange = withinRange
     }
 }
