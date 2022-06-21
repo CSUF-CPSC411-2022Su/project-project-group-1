@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     //@StateObject var volunteer = Volunteer(name: "", age: 0)
-    @State var TheVar: String = "*This is the string  variable passed from the first page*"
+    @State var TheVar: String = "*This is the string variable passed from the first page*"
     //@State var age: String = ""
     //@State var message: String = ""
     var body: some View {
@@ -56,7 +56,7 @@ struct ContentView: View {
 struct Information: View {
     @Binding var TheVar: String
     var body: some View {
-        Text(TheVar).padding()
+        Text(TheVar).bold().padding()
     }
 }
  
@@ -93,7 +93,7 @@ struct VolunteerDetails: View {
             HStack {
                 //Spacer()
                 //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
-                Information(TheVar: $TheVar)
+                Information(TheVar: $TheVar).padding()
                 //Text("Ages 18 - 50:")
                 //Text("6 hours").bold()
             }
