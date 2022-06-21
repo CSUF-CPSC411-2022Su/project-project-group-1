@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         //Text("Hello, world!")
             //.padding()
-        
+        NavigationView {
         
         HStack {
             //Text("TEST")
@@ -36,9 +36,30 @@ struct ContentView: View {
             }) {
                 Text("AR MODE")
             }.padding().modifier(ContentText())   //.border(Color.black)
+            
+            NavigationLink(destination: VolunteerDetails()) {
+                                    Text("See volunteer hour details.")
+                                         .font(.caption)
+                            }//.padding(.bottom, 30)
         }
     }
+    }
+        
 }
+
+
+/*
+struct Information: View {
+    @Binding var name: String
+    @Binding var address: String
+    @Binding var age: String
+    var body: some View {
+        //Text(name).padding()
+        //Text(address).padding()
+        //Text(age).padding()
+    }
+}
+ */
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -52,7 +73,37 @@ struct ContentText: ViewModifier {
            .font(.custom("Courier New", size: 30))
            .foregroundColor(Color.white)
            .padding()
-                      .background(Color.black)
+                      //.background(Color.black)
                       .cornerRadius(10)
                }
            }
+
+struct VolunteerDetails: View {
+    // TODO: (Model 4) Insert Environment object here
+    var body: some View {
+        VStack {
+            Text("Max hours given by age")
+                .font(.headline)
+                .padding(.bottom, 30)
+            HStack {
+                Text("Ages 13 - 17:")
+                Text("4 hours").bold()
+            }
+            HStack {
+                Text("Ages 18 - 50:")
+                Text("6 hours").bold()
+            }
+
+            HStack {
+                Text("Ages 51 - 60:")
+                Text("3 hours").bold()
+            }.padding(.bottom, 30)
+            HStack {
+                Text("*People below 13 and over 60 are not eligible to volunteer.")
+                    .font(.caption)
+            }
+            Spacer()
+            // TODO: (Model 4) Insert Text view here
+        }
+    }
+}
