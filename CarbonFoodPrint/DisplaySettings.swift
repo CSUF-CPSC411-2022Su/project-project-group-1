@@ -8,9 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct Empty: ViewModifier {
-   func body(content: Content) -> some View {
-        content
-           .font(.custom("Courier New", size: 30))
+struct DisplaySettings: View {
+    var body: some View {
+        Text("TODO")
     }
 }

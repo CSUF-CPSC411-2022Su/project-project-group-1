@@ -8,10 +8,5 @@
 import Foundation
 import SwiftUI
 
-struct ResourceView: View {
-    @EnvironmentObject var manager: DisplayManager
 
-    var body: some View {
-        Text("Hello")
-    }
 }

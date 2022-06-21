@@ -31,17 +31,16 @@ struct DisplayView: View {
                     Image(systemName: "info")
                     Text("About")
                 }
+            DisplaySettings()
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                    Text("Settings")
+                }
         }.environmentObject(manager)
     }
 }
 
 struct DisplayList: View {
-    @State private var box = [
-        ElementBox(description: "Carbon Emissions Reduced"),
-        ElementBox(description: "Water Saved"),
-        ElementBox(description: "Soil Quality Improved"),
-        ElementBox(description: "Antibiotics Mitigated")
-    ]
     @EnvironmentObject var manager: DisplayManager
 
     var body: some View {
@@ -52,36 +51,16 @@ struct DisplayList: View {
                 .foregroundColor(.green)
             NavigationView {
                 List {
-                    ForEach(box) { item in
+                    ForEach(manager.display) { resource in
                         NavigationLink(destination: ResourceView()) {
                             VStack (alignment: .leading) {
-                                Spacer()
-                                Text(item.description)
-                                Spacer()
+                                Text(resource.description)
                             }
                         }
                     }
                 }
             }
         }
-
-        /*
-        GeometryReader { geometry in
-            VStack {
-                Text("Your Impact on the World")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.green)
-                VStack(spacing: 3) {
-                    ForEach(box) { element in
-                        NavigationLink(destination: ResourceView()) {
-                            element
-                        }
-                    }
-                }.environmentObject(manager)
-            }.frame(height: geometry.size.height / 2)
-        }
-        */
     }
 }
 
@@ -91,25 +70,10 @@ struct DisplayInfo: View {
     }
 }
 
-struct ElementBox: View, Identifiable {
-    var id = UUID()
-    var description: String
+struct ResourceView: View {
+    @EnvironmentObject var manager: DisplayManager
 
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Rectangle()
-                    .fill(.gray)
-                    .opacity(0.3)
-                    .cornerRadius(4)
-                    .frame(width: geometry.size.width * 6 / 7)
-                HStack {
-                    Spacer()
-                    Text(description)
-                        .foregroundColor(.black)
-                    Spacer()
-                }
-            }
-        }
+        Text("Hello")
     }
 }
