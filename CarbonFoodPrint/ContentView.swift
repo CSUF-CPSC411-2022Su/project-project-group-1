@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         //Text("Hello, world!")
             //.padding()
-        NavigationView {
+        
         
         HStack {
             //Text("TEST")
@@ -24,7 +24,7 @@ struct ContentView: View {
             }.padding().modifier(ContentText())  //.border(Color.black)
             
         }
-        
+        NavigationView {
         VStack {
             Button(action: {
                 print("Was clicked")
@@ -38,7 +38,7 @@ struct ContentView: View {
             }.padding().modifier(ContentText())   //.border(Color.black)
             
             NavigationLink(destination: VolunteerDetails()) {
-                                    Text("See volunteer hour details.")
+                                    Text("See Notices")
                                          .font(.caption)
                             }//.padding(.bottom, 30)
         }
@@ -73,7 +73,7 @@ struct ContentText: ViewModifier {
            .font(.custom("Courier New", size: 30))
            .foregroundColor(Color.white)
            .padding()
-                      //.background(Color.black)
+                      .background(Color.black)
                       .cornerRadius(10)
                }
            }
@@ -82,25 +82,25 @@ struct VolunteerDetails: View {
     // TODO: (Model 4) Insert Environment object here
     var body: some View {
         VStack {
-            Text("Max hours given by age")
+            Text("I'm sorry to say that the buttons don't actually do anything at the moment.")
                 .font(.headline)
                 .padding(.bottom, 30)
             HStack {
-                Text("Ages 13 - 17:")
-                Text("4 hours").bold()
+                Text("However rest assured they will eventually do something")
+                Text("").bold()
             }
             HStack {
-                Text("Ages 18 - 50:")
-                Text("6 hours").bold()
+                //Text("Ages 18 - 50:")
+                //Text("6 hours").bold()
             }
 
             HStack {
-                Text("Ages 51 - 60:")
-                Text("3 hours").bold()
+                //Text("Ages 51 - 60:")
+                //Text("3 hours").bold()
             }.padding(.bottom, 30)
             HStack {
-                Text("*People below 13 and over 60 are not eligible to volunteer.")
-                    .font(.caption)
+                //Text("*People below 13 and over 60 are not eligible to volunteer.")
+                    //.font(.caption)
             }
             Spacer()
             // TODO: (Model 4) Insert Text view here
