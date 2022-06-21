@@ -61,7 +61,7 @@ struct ScreenView: View{
                 .scaledToFit()
                 .frame(width: 150, height: 150, alignment: .center)
             Spacer()
-            NavigationLink(destination: SearchPage(), label:{
+            NavigationLink(destination: EnvObj(), label:{
                 Text("Find Alternatives")
                     .frame(width: 200, height: 40, alignment: .center)
                     .background(Color.gray)
