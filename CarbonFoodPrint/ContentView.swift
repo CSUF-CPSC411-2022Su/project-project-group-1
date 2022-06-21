@@ -9,23 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-// >>> added by own Scene here, replace when merging
-
-struct TestView: View {
-    var body: some View {
+        // Text("Hello, world!")
+        //     .padding()
         DisplayView()
     }
 }
 
-struct TestView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TestView()
+        ContentView()
     }
 }
-
-// >>> end

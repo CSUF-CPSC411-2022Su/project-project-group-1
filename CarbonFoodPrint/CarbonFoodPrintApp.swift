@@ -11,8 +11,7 @@ import SwiftUI
 struct CarbonFoodPrintApp: App {
     var body: some Scene {
         WindowGroup {
-            // ContentView()
-            TestView()
+            ContentView()
         }
     }
 }
