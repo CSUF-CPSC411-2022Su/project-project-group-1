@@ -14,32 +14,39 @@ import Foundation
 
 // Initial Menu (button)
 struct GreenMapsMenuView: View {
+    @StateObject var location = CurrentLocation(country: "", state: "", city: "",
+                                                zipCode: "", withinRange: 0)
+    
     var body: some View {
         NavigationView {
             VStack {
                 Text("*** GREENMAPS FEATURE VIEW ***")
                     .font(.headline).padding(.bottom, 30)
+                
 
                 //MARK: - NAVIGATION LINKS Button
-                NavigationLink(destination: GreenMapsSearchView()) {
+                NavigationLink(destination: GreenMapsSearchView(location: location)) {
                     Text("Open GreenMaps!").padding()
                         .modifier(ButtonDesign())
                 }
                 Spacer()
             }
-        }
+        }.environmentObject(location)
     }
 }
 
 // Search Menu (ask for user input)
 struct GreenMapsSearchView: View {
     @StateObject var location = CurrentLocation(country: "", state: "", city: "",
-                                                zipCode: "". withinRange: 0)
-    @State var country: String
-    @State var state: String
-    @State var city: String
-    @State var zipCode: String
-    @State var withinRange: String
+                                               zipCode: "", withinRange: 0)
+    @State var country: String = ""
+    @State var state: String = ""
+    @State var city: String = ""
+    @State var zipCode: String = ""
+    @State var withinRange: String = ""
+    
+    @State var message: String = ""
+    @State var nonValid: Bool = true
     
     var body: some View {
         VStack {
@@ -67,20 +74,33 @@ struct GreenMapsSearchView: View {
             }
             Spacer()
         
-            if let validRange = Int(withinRange) {
-                location.country = country
-                location.state = state
-                location.city = city
-                location.zipCode = zipCode
-                location.withinRange = validRange
-                
-                // NAVIGATION LINKS
-                NavigationLink(destination: GreenMapsView()) {
-                    Text("Search!").padding()
-                        .modifier(ButtonDesign())
+            HStack {
+                Button(action: {
+                    if let validRange = Int(withinRange), !country.isEmpty {
+                        location.country = country
+                        location.state = state
+                        location.city = city
+                        location.zipCode = zipCode
+                        location.withinRange = validRange
+                        
+                    } else {
+                        message = "This location is not valid. Please add valid location information."
+                        nonValid = false
+                        
+                    }
+                }){
+                    if (nonValid) {
+                        // NAVIGATION LINKS
+                        NavigationLink(destination: GreenMapsView()) {
+                            Text("Search!").padding()
+                                .modifier(ButtonDesign())
+                        }
+                    } else {
+                        Text(message).padding()
+                        Text("Search!")
+                            .modifier(ButtonDesign())
+                    }
                 }
-            } else {
-                Text("This location is not valid. Please add valid location information.")
             }
             Spacer()
         }
@@ -102,10 +122,6 @@ class CurrentLocation: ObservableObject {
     @Published var city: String
     @Published var zipCode: String
     @Published var withinRange: Int
-    
-    init() {
-        
-    }
     
     init(country: String, state: String, city: String, zipCode: String, withinRange: Int) {
         self.country = country
