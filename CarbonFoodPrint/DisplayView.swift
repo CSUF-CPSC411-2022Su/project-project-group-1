@@ -45,9 +45,7 @@ struct DisplayList: View {
     var body: some View {
         VStack {
             Text("Your Impact on the World")
-                .font(.title)
-                .bold()
-                .foregroundColor(.green)
+                .modifier(DisplayTitle())
             NavigationView {
                 List {
                     ForEach(manager.display) { resource in
@@ -58,6 +56,14 @@ struct DisplayList: View {
                         }
                     }
                 }
+            }
+            VStack {
+                Text("Goal Tracker")
+                    .modifier(DisplayTitle())
+                TextEditor(text: $manager.goalTracker)
+                    .foregroundColor(Color.gray)
+                    .font(.custom("HelveticaNeue", size: 13))
+                    .lineSpacing(5)
             }
         }
     }
