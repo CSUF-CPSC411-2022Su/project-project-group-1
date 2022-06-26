@@ -15,7 +15,6 @@ import SwiftUI
 */
 
 struct DisplayView: View {
-    // The default main page
     @StateObject var manager = DisplayManager()
 
     var body: some View {
@@ -24,6 +23,11 @@ struct DisplayView: View {
                 .tabItem {
                     Image(systemName: "leaf.circle.fill")
                     Text("Contributions")
+                }
+            DisplayGraph()
+                .tabItem {
+                    Image(systemName: "chart.xyaxis.line")
+                    Text("Graph")
                 }
             DisplayInfo()
                 .tabItem {
@@ -47,24 +51,46 @@ struct DisplayList: View {
             VStack {
                 Text("Your Impact on the World")
                     .modifier(DisplayTitle())
-                    List {
-                        ForEach(manager.display) { resource in
-                            NavigationLink(destination: Text("\(resource.percentage)%")) {
-                                HStack {
-                                    Text(resource.description)
-                                }
+                List {
+                    ForEach(manager.display) { resource in
+                        NavigationLink(destination: Text("\(resource.percentage)%")) {
+                            HStack {
+                                Text(resource.description)
                             }
                         }
                     }
-                VStack {
-                    Text("Goal Tracker")
-                        .modifier(DisplayTitle())
-                    TextEditor(text: $manager.goalTracker)
-                        .foregroundColor(Color.gray)
-                        .font(.custom("HelveticaNeue", size: 13))
-                        .lineSpacing(5)
                 }
             }
+        }
+    }
+}
+
+struct DisplayGraph: View {
+    @AppStorage("formatSelection") var formatSelection: String = ""
+
+    var body: some View {
+        VStack {
+            Text("Graph Summary")
+                .modifier(DisplayTitle())
+            // debug
+            Text(formatSelection)
+            // debug
+
+            /*
+            switch (formatSelection) {
+                case "Table":
+                    // draw table
+                    Text("TODO")
+                case "Coverage Map":
+                    // draw map
+                    Text("TODO")
+                case "Pie Chart":
+                    // draw chart
+                    Text("TODO")
+                default:
+                    break
+            }
+            */
         }
     }
 }

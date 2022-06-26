@@ -11,8 +11,7 @@ import SwiftUI
 class DisplayManager: ObservableObject {
     // contains the impact and the percentage with respect to their order ingredients
     @Published var display = [Display]()
-    @AppStorage("goalTracker") var goalTracker: String = "Write Something Here..."
-
+    
     init() {
         display.append(Display(description: "Carbon Emissions Reduced", percentage: 5))
         display.append(Display(description: "Water Saved", percentage: 40))
