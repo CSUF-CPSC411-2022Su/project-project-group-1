@@ -10,16 +10,16 @@ import SwiftUI
 
 struct DisplaySettings: View {
     @AppStorage("formatSelection") var formatSelection: String = ""
-    @State private var formatOption = ["Table": "tablecells.fill", "Coverage Map": "map.fill", "Pie Chart": "chart.pie.fill"]
+    @State private var formatOptions = ["Table": "tablecells.fill", "Coverage Map": "map.fill", "Pie Chart": "chart.pie.fill"]
 
     var body: some View {
         VStack {
             Text("Settings")
                 .modifier(DisplayTitle())
             HStack {
-                Label("View Option", systemImage: formatOption[formatSelection] ?? "square")
+                Label("View Option", systemImage: formatOptions[formatSelection] ?? "square.dotted")
                 Picker("View Option", selection: $formatSelection) {
-                    ForEach(formatOption.sorted(by: <), id: \.key) { option in
+                    ForEach(formatOptions.sorted(by: <), id: \.key) { option in
                         Text(option.key)
                     }
                 }

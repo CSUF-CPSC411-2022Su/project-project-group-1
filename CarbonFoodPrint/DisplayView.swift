@@ -16,6 +16,7 @@ import SwiftUI
 
 struct DisplayView: View {
     @StateObject var manager = DisplayManager()
+    @AppStorage("formatSelection") var formatSelection: String = ""
 
     var body: some View {
         TabView {
@@ -31,7 +32,7 @@ struct DisplayView: View {
                 }
             DisplayInfo()
                 .tabItem {
-                    Image(systemName: "info")
+                    Image(systemName: "info.circle.fill")
                     Text("About")
                 }
             DisplaySettings()
