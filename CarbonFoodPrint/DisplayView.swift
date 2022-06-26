@@ -43,27 +43,27 @@ struct DisplayList: View {
     @EnvironmentObject var manager: DisplayManager
 
     var body: some View {
-        VStack {
-            Text("Your Impact on the World")
-                .modifier(DisplayTitle())
-            NavigationView {
-                List {
-                    ForEach(manager.display) { resource in
-                        NavigationLink(destination: Text("\(resource.percentage)%")) {
-                            HStack {
-                                Text(resource.description)
+        NavigationView {
+            VStack {
+                Text("Your Impact on the World")
+                    .modifier(DisplayTitle())
+                    List {
+                        ForEach(manager.display) { resource in
+                            NavigationLink(destination: Text("\(resource.percentage)%")) {
+                                HStack {
+                                    Text(resource.description)
+                                }
                             }
                         }
                     }
+                VStack {
+                    Text("Goal Tracker")
+                        .modifier(DisplayTitle())
+                    TextEditor(text: $manager.goalTracker)
+                        .foregroundColor(Color.gray)
+                        .font(.custom("HelveticaNeue", size: 13))
+                        .lineSpacing(5)
                 }
-            }
-            VStack {
-                Text("Goal Tracker")
-                    .modifier(DisplayTitle())
-                TextEditor(text: $manager.goalTracker)
-                    .foregroundColor(Color.gray)
-                    .font(.custom("HelveticaNeue", size: 13))
-                    .lineSpacing(5)
             }
         }
     }
@@ -72,5 +72,6 @@ struct DisplayList: View {
 struct DisplayInfo: View {
     var body: some View {
         Text("The crisis of food resources to the development of homeless is a major issue in the world. Here, we demonstrate the impacts you made in helping starvation and the production of natural resources.")
+            .frame(alignment: .center)
     }
 }
