@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScreenView: View{
-    @StateObject var query: AlternativeFinder = AlternativeFinder()
+    @EnvironmentObject var query: AlternativeFinder
     var body: some View {
         VStack(alignment: .center) {
             Spacer()
@@ -31,6 +31,5 @@ struct ScreenView: View{
             } )
             Spacer()
         }
-        .environmentObject(query)
     }
 }

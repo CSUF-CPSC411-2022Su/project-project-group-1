@@ -9,19 +9,19 @@ import SwiftUI
 
 
 struct EnvObj: View {
-    @EnvironmentObject var searchResult: AlternativeFinder
+    @StateObject var searchResult: AlternativeFinder = AlternativeFinder()
     
     var body: some View {
-        Form{
-            Link("Search Result 1", destination: URL(string: searchResult.firstSearchResult)!)
-            Link("Search Result 2", destination: URL(string: searchResult.secondSearchResult)!)
-            Link("Search Result 3", destination: URL(string: searchResult.thirdSearchResult)!)
-            Link("Search Result 4", destination: URL(string: searchResult.fourthSearchResult)!)
-            Link("Search Result 5", destination: URL(string: searchResult.fifthSearchResult)!)
-            
+        NavigationView{
+            List{
+                Section(
+                    header: Text("Search Results")){
+                        Text(searchResult.firstSearchResult)
+                        Text(searchResult.secondSearchResult)
+                    }
+                
+            }
         }
-        
-       
     }
 }
 

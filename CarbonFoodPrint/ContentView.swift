@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @StateObject var query: AlternativeFinder = AlternativeFinder()
     @State var openMenu = false
     
     var body: some View{
@@ -48,6 +48,7 @@ struct ContentView: View {
                 }
             ))
         }
+        .environmentObject(query)
     }
 }
 
