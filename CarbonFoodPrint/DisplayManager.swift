@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 
 struct Display: Identifiable {
+    // each display contains two properties: description and percentage
     var id = UUID()
     var description: String
     var percentage: UInt
 }
 
 class DisplayManager: ObservableObject {
-    // contains the impact and the percentage with respect to their order ingredients
+    // stores an array of <Display> objects
     @Published var display = [Display]()
     
     init() {

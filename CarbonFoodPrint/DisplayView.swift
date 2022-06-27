@@ -8,12 +8,6 @@
 import Foundation
 import SwiftUI
 
-/* Note
-    - the percentage values should be obtained from another source (hard-coded the values)
-        - best to use make use of environment objects for the underlying shared data structure
-    - this could be simply infered from the nutrition facts
-*/
-
 struct DisplayView: View {
     @StateObject var manager = DisplayManager()
 

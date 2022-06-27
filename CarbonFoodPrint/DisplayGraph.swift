@@ -86,7 +86,7 @@ struct DisplayMap: View {
                     .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
                     .frame(width: geometry.size.width, height: geometry.size.height / 2)
                     .foregroundColor(.gray)
-                    .rotationEffect(.degrees(-37))
+                    .rotationEffect(.degrees(-36.5))
                 CoverageMap(bound: manager.display.map { CGFloat($0) })
                     .fill(Color("BabyBlue").opacity(0.5))
             }
