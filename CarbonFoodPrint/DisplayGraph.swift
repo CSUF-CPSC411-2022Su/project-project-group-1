@@ -30,7 +30,7 @@ struct DisplayGraph: View {
                 .pickerStyle(.menu)
             }
             .padding()
-            switch (formatSelection) {
+            switch formatSelection {
                 case "Bar":
                     DisplayBar()
                 case "Map":
@@ -99,4 +99,3 @@ struct DisplayPie: View {
         Text("pie todo")
     }
 }
-

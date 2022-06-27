@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CoverageMap: Shape {
     var bound = [CGFloat]()
-    
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
