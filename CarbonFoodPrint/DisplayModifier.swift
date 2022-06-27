@@ -12,6 +12,6 @@ struct DisplayTitle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.title)
-            .foregroundColor(.green)
+            .foregroundColor(Color("EcoGreen"))
     }
 }

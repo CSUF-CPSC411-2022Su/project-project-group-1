@@ -40,7 +40,9 @@ struct DisplayView: View {
                     Image(systemName: "gearshape.fill")
                     Text("Settings")
                 }
-        }.environmentObject(manager)
+        }
+        .environmentObject(manager)
+        .accentColor(Color("EcoGreen"))
     }
 }
 
