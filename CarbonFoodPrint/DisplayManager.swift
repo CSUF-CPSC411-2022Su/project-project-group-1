@@ -18,7 +18,7 @@ struct Display: Identifiable {
 class DisplayManager: ObservableObject {
     // stores an array of <Display> objects
     @Published var display = [Display]()
-    
+
     init() {
         display.append(Display(description: "Carbon Emissions Reduced", percentage: 5))
         display.append(Display(description: "Water Saved", percentage: 40))
