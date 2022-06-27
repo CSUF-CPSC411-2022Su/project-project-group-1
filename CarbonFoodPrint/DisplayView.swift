@@ -16,7 +16,6 @@ import SwiftUI
 
 struct DisplayView: View {
     @StateObject var manager = DisplayManager()
-    @AppStorage("formatSelection") var formatSelection: String = ""
 
     var body: some View {
         TabView {
@@ -64,33 +63,6 @@ struct DisplayList: View {
                     }
                 }
             }
-        }
-    }
-}
-
-struct DisplayGraph: View {
-    @AppStorage("formatSelection") var formatSelection: String = ""
-
-    var body: some View {
-        PageStack {
-            Text("Data Visualization")
-                .modifier(DisplayTitle())
-            Text(formatSelection)
-            /*
-            switch (formatSelection) {
-                case "Table":
-                    // draw table
-                    Text("TODO")
-                case "Coverage Map":
-                    // draw map
-                    Text("TODO")
-                case "Pie Chart":
-                    // draw chart
-                    Text("TODO")
-                default:
-                    break
-            }
-            */
         }
     }
 }
