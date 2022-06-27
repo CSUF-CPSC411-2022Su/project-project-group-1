@@ -75,14 +75,22 @@ struct DisplayMap: View {
     @EnvironmentObject var manager: DisplayManager
 
     var body: some View {
-        CoverageMap(
-            top: CGFloat(manager.display[0]),
-            right: CGFloat(manager.display[1]),
-            bottom: CGFloat(manager.display[2]),
-            left: CGFloat(manager.display[3])
-        )
-
-            .fill(Color("BabyBlue").opacity(0.2))
+        GeometryReader { geometry in
+            ZStack {
+                // https://stackoverflow.com/questions/65248710/swiftui-how-to-make-a-vertical-dotted-line-using-shape
+                DashedLine()
+                    .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                    .frame(width: 1, height: geometry.size.height)
+                    .foregroundColor(.gray)
+                DashedLine()
+                    .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                    .frame(width: geometry.size.width, height: geometry.size.height / 2)
+                    .foregroundColor(.gray)
+                    .rotationEffect(.degrees(-37))
+                CoverageMap(bound: manager.display.map { CGFloat($0) })
+                    .fill(Color("BabyBlue").opacity(0.5))
+            }
+        }
     }
 }
 
@@ -92,19 +100,3 @@ struct DisplayPie: View {
     }
 }
 
-struct CoverageMap: Shape {
-    let top: CGFloat, right: CGFloat, bottom: CGFloat, left: CGFloat
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-
-        path.move(to: CGPoint(x: rect.maxX / 2, y: top * 50))
-
-        path.addLine(to: CGPoint(x: rect.maxX - (rect.maxX / 200 * right), y: rect.maxY / 2))
-        path.addLine(to: CGPoint(x: rect.maxX / 2, y: rect.maxY - (rect.maxY / 200 * bottom)))
-        path.addLine(to: CGPoint(x: right, y: rect.maxY / 2))
-        path.move(to: CGPoint(x: rect.maxX / 2, y: top * 50))
-
-        return path
-    }
-}
