@@ -8,6 +8,12 @@
 import Foundation
 import SwiftUI
 
+struct Display: Identifiable {
+    var id = UUID()
+    var description: String
+    var percentage: UInt
+}
+
 class DisplayManager: ObservableObject {
     // contains the impact and the percentage with respect to their order ingredients
     @Published var display = [Display]()
@@ -20,8 +26,8 @@ class DisplayManager: ObservableObject {
     }
 }
 
-struct Display: Identifiable {
-    var id = UUID()
-    var description: String
-    var percentage: UInt
+extension CGFloat {
+    init(_ display: Display) {
+        self = CGFloat(display.percentage)
+    }
 }

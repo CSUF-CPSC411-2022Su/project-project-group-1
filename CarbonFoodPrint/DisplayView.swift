@@ -34,11 +34,6 @@ struct DisplayView: View {
                     Image(systemName: "info.circle.fill")
                     Text("About")
                 }
-            DisplaySettings()
-                .tabItem {
-                    Image(systemName: "gearshape.fill")
-                    Text("Settings")
-                }
         }
         .environmentObject(manager)
         .accentColor(Color("EcoGreen"))
@@ -73,10 +68,15 @@ struct DisplayInfo: View {
             PageStack {
                 Text("About")
                     .modifier(DisplayTitle())
-                Text("The crisis of food resources to the development of homeless is a major issue in the world. Here, we demonstrate the impacts you made in helping starvation and the production of natural resources.")
+                Text("From the scarcity of food resources to the development of homeless is a major issue in the world. Here, we demonstrate the impacts you made in helping starvation and the production of natural resources.")
                     .padding()
-                    .frame(minWidth: geometry.size.width * 0.10,
+                    .frame(minWidth: geometry.size.width * 0.1,
                            maxWidth: geometry.size.width * 0.9)
+                Image("food")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200)
+                    .clipShape(Circle())
             }
         }
     }
