@@ -7,38 +7,21 @@
 
 import SwiftUI
 
-class EnvironmentObjView: ObservableObject{
-    @Published var dataArray: [String] = []
-    
-    init(){
-        getData()
-    }
-    
-    func getData(){
-        self.dataArray.append("Search Result 1")
-        self.dataArray.append("Search Result 2")
-        self.dataArray.append("Search Result 3")
-        self.dataArray.append("Search Result 4")
-        self.dataArray.append("Search Result 5")
-    }
-}
-
 
 struct EnvObj: View {
-    
-    @StateObject var Model: EnvironmentObjView = EnvironmentObjView()
+    @EnvironmentObject var searchResult: AlternativeFinder
     
     var body: some View {
-        NavigationView{
-            List{
-                ForEach(Model.dataArray,id:\.self){
-                    result in NavigationLink(destination: NavScreen(selectedresult: result), label: {
-                        Text(result)
-                    })
-                }
-            }
-            .navigationTitle("Search Result")
+        Form{
+            Link("Search Result 1", destination: URL(string: searchResult.firstSearchResult)!)
+            Link("Search Result 2", destination: URL(string: searchResult.secondSearchResult)!)
+            Link("Search Result 3", destination: URL(string: searchResult.thirdSearchResult)!)
+            Link("Search Result 4", destination: URL(string: searchResult.fourthSearchResult)!)
+            Link("Search Result 5", destination: URL(string: searchResult.fifthSearchResult)!)
+            
         }
+        
+       
     }
 }
 
@@ -66,3 +49,4 @@ struct EnvObj_Preview: PreviewProvider {
         EnvObj()
     }
 }
+

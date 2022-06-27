@@ -2,34 +2,35 @@
 //  ScreenView.swift
 //  CarbonFoodPrint
 //
-//  Created by csuftitan on 6/20/22.
+//  Created by csuftitan on 6/27/22.
 //
 
 import SwiftUI
 
-struct ScreenView: View {
+struct ScreenView: View{
+    @StateObject var query: AlternativeFinder = AlternativeFinder()
     var body: some View {
-        
         VStack(alignment: .center) {
             Spacer()
             Image(systemName: "camera.viewfinder")
-                .padding()
-                .frame(width: 100, height: 100, alignment: .center)
-            Button(action: {
-                print("Check for Alternatives Action")
-            }, label: {
-                Text("Check Alternatives").foregroundColor(Color.white)
-                    .background(Color(hue: 1.0, saturation: 0.077, brightness: 0.8)).padding()
-            })
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150, alignment: .center)
             Spacer()
-            Text("Display Alternatives Here")
+            TextField("Search Alternatives", text:$query.searchQuery)
+                .frame(width: 200, height: 40, alignment: .center)
+                .border(.black)
+                .multilineTextAlignment(.center)
+            Spacer()
+            NavigationLink(destination: EnvObj(), label:{
+                Text("Find Alternatives")
+                    .frame(width: 200, height: 40, alignment: .center)
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            } )
             Spacer()
         }
-    }
-    
-    struct ScreenView_Previews: PreviewProvider {
-        static var previews: some View {
-            ScreenView()
-        }
+        .environmentObject(query)
     }
 }
