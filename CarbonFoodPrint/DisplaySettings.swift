@@ -13,7 +13,7 @@ struct DisplaySettings: View {
     @State private var formatOptions = ["Table": "tablecells.fill", "Coverage Map": "map.fill", "Pie Chart": "chart.pie.fill"]
 
     var body: some View {
-        VStack {
+        PageStack {
             Text("Settings")
                 .modifier(DisplayTitle())
             HStack {

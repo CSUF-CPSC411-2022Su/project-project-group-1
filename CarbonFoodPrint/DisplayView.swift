@@ -51,7 +51,7 @@ struct DisplayList: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            PageStack {
                 Text("Your Impact on the World")
                     .modifier(DisplayTitle())
                 List {
@@ -72,13 +72,10 @@ struct DisplayGraph: View {
     @AppStorage("formatSelection") var formatSelection: String = ""
 
     var body: some View {
-        VStack {
-            Text("Graph Summary")
+        PageStack {
+            Text("Data Visualization")
                 .modifier(DisplayTitle())
-            // debug
             Text(formatSelection)
-            // debug
-
             /*
             switch (formatSelection) {
                 case "Table":
@@ -100,7 +97,15 @@ struct DisplayGraph: View {
 
 struct DisplayInfo: View {
     var body: some View {
-        Text("The crisis of food resources to the development of homeless is a major issue in the world. Here, we demonstrate the impacts you made in helping starvation and the production of natural resources.")
-            .frame(alignment: .center)
+        GeometryReader { geometry in
+            PageStack {
+                Text("About")
+                    .modifier(DisplayTitle())
+                Text("The crisis of food resources to the development of homeless is a major issue in the world. Here, we demonstrate the impacts you made in helping starvation and the production of natural resources.")
+                    .padding()
+                    .frame(minWidth: geometry.size.width * 0.10,
+                           maxWidth: geometry.size.width * 0.9)
+            }
+        }
     }
 }
