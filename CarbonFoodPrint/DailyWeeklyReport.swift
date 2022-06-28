@@ -11,19 +11,33 @@ import SwiftUI
 // 6.2 miles produces 1.97 kg CO2
 // REFERENCE: https://www.co2everything.com/co2e-of/toyota-corolla-2020
 
-class totalCO2 : ObservableObject
+class totalCO2 : ObservableObject, Identifiable
 {
     @Published var carType: String
     @Published var CO2 : Double
     @Published var milesDriven: Double
+    @Published var carDriven = [
+        "Toyota Corolla": 4.34,
+       "Tesla Model Y": 1.92,
+       "Nissan Leaf": 2.18,
+       "BMW X5": 8.20
+    ]
     
     // initializer
-    init(carType: String, CO2: Double, milesDriven: Double)
+    init()
     {
-        self.carType = carType
-        self.CO2 = CO2
-        self.milesDriven = milesDriven
+        carType = ""
+        CO2 = 0
+        milesDriven = 0
     }
+    
+    func displayCars(_carDriven: Dictionary<String, Double>)
+    {
+        for key in carDriven{
+            print("\(key)")
+        }
+    }
+    
     
     func carDrivenDaily()
     {

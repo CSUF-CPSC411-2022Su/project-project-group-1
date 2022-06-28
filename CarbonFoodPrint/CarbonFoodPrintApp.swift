@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CarbonFoodPrintApp: App {
+    @StateObject var daily = totalCO2()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(daily)
+//            ContentView()
         }
     }
 }
