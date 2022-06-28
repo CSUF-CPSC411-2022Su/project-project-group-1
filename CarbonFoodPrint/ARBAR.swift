@@ -1,0 +1,35 @@
+//
+//  ARBAR.swift
+//  CarbonFoodPrint
+//
+//  Created by Ethan Story on 6/27/22.
+//
+
+import Foundation
+import SwiftUI
+
+
+struct ARView: View {
+    var body: some View {
+        
+        Text("Camera goes here")
+        NavigationView {
+            VStack {
+                List {
+                    Section(header: Text("Camera goes here")) {
+                        NavigationLink(destination: Text("Name of the crosswalk")) {
+                            Text("Crosswalk name")
+                        }
+                        NavigationLink(destination: Text("Address of the crosswalk")) {
+                            Text("Crosswalk address")
+                        }
+                    }
+                
+                    
+                    }
+                }
+                Spacer()
+            }
+        }
+    }
+

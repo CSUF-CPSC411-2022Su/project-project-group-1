@@ -28,6 +28,23 @@ struct ContentView: View {
             }.padding().modifier(ContentText())  //.border(Color.black)
             
         }
+        TabView {
+            ARView()
+                .tabItem {
+                    Image(systemName: "camera")
+                    Text("Crosswalks")
+                }
+            //CrossWalkInfo()
+              //  .tabItem {
+                //    Image(systemName: "info")
+                  //  Text("Crosswalk Info")
+                //}
+            //AddCrossWalk()
+              //  .tabItem {
+                //    Image(systemName: "plus")
+                  //  Text("Add Crosswalk")
+               // }
+        }//.environmentObject(manager)
         NavigationView {
         VStack {
             Button(action: {
