@@ -107,11 +107,11 @@ struct VolunteerDetails: View {
     @Binding var TheVar: String
     var body: some View {
         VStack {
-            Text("This is simply a notice.")
+            Text("This scanner is still being implemented.")
                 .font(.headline)
                 .padding(.bottom, 30)
             HStack {
-                Text("This is the second page")
+                Text("Notice Page.")
                 
                 Spacer()
             }
