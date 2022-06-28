@@ -15,6 +15,8 @@ struct ARView: View {
         //Text("Camera goes here")
         NavigationView {
             VStack {
+                Text("AR camera goes here")
+                /*
                 List {
                     Section(header: Text("Camera goes here")) {
                         NavigationLink(destination: Text("Name of the crosswalk")) {
@@ -27,6 +29,7 @@ struct ARView: View {
                 
                     
                     }
+                */
                 }
                 Spacer()
             }
@@ -37,6 +40,8 @@ struct BarView: View {
 
         NavigationView {
             VStack {
+                Text("Scanner goes here")
+                /*
                 List {
                     Section(header: Text("Scanner goes here")) {
                         NavigationLink(destination: Text("Name of the crosswalk")) {
@@ -49,6 +54,7 @@ struct BarView: View {
                 
                     
                     }
+                 */
                 }
                 Spacer()
             }
