@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		008D0185285FCC8F00743E30 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0184285FCC8F00743E30 /* Modifiers.swift */; };
 		00DBFB9A28584DD200753300 /* GreenMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DBFB9928584DD200753300 /* GreenMapsView.swift */; };
+		00EA686A286ABC1E006CF6C1 /* GreenMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EA6869286ABC1E006CF6C1 /* GreenMaps.swift */; };
 		C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */; };
 		C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81E28511E9E004A8A11 /* ContentView.swift */; };
 		C44AD82128511E9F004A8A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44AD82028511E9F004A8A11 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		008D0184285FCC8F00743E30 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		00DBFB9928584DD200753300 /* GreenMapsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenMapsView.swift; sourceTree = "<group>"; };
+		00EA6869286ABC1E006CF6C1 /* GreenMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenMaps.swift; sourceTree = "<group>"; };
 		C44AD81928511E9E004A8A11 /* CarbonFoodPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonFoodPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintApp.swift; sourceTree = "<group>"; };
 		C44AD81E28511E9E004A8A11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */,
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
 				00DBFB9928584DD200753300 /* GreenMapsView.swift */,
+				00EA6869286ABC1E006CF6C1 /* GreenMaps.swift */,
 				008D0184285FCC8F00743E30 /* Modifiers.swift */,
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
@@ -269,6 +272,7 @@
 				00DBFB9A28584DD200753300 /* GreenMapsView.swift in Sources */,
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
+				00EA686A286ABC1E006CF6C1 /* GreenMaps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

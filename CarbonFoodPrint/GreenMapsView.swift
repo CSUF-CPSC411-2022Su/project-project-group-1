@@ -14,9 +14,6 @@ import Foundation
 
 // Initial Menu (button)
 struct GreenMapsMenuView: View {
-    @StateObject var location = CurrentLocation(country: "", state: "", city: "",
-                                                zipCode: "", withinRange: 0)
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -25,20 +22,19 @@ struct GreenMapsMenuView: View {
                 
 
                 //MARK: - NAVIGATION LINKS Button
-                NavigationLink(destination: GreenMapsSearchView(location: location)) {
+                NavigationLink(destination: GreenMapsSearchView()) {
                     Text("Open GreenMaps!").padding()
                         .modifier(ButtonDesign())
                 }
                 Spacer()
             }
-        }.environmentObject(location)
+        }
     }
 }
 
 // Search Menu (ask for user input)
 struct GreenMapsSearchView: View {
-    @StateObject var location = CurrentLocation(country: "", state: "", city: "",
-                                               zipCode: "", withinRange: 0)
+    @StateObject var location = CurrentLocation()
     @State var country: String = ""
     @State var state: String = ""
     @State var city: String = ""
@@ -46,7 +42,7 @@ struct GreenMapsSearchView: View {
     @State var withinRange: String = ""
     
     @State var message: String = ""
-    @State var nonValid: Bool = true
+    @State var nonValid: Bool = false
     
     var body: some View {
         VStack {
@@ -73,23 +69,24 @@ struct GreenMapsSearchView: View {
                 TextField("Miles", text: $withinRange)
             }
             Spacer()
-        
+            Text(message)
+            
             HStack {
                 Button(action: {
-                    if let validRange = Int(withinRange), !country.isEmpty {
+                    if let validRange = Int(withinRange), !country.isEmpty, !state.isEmpty,
+                                            !city.isEmpty, !zipCode.isEmpty {
                         location.country = country
                         location.state = state
                         location.city = city
                         location.zipCode = zipCode
                         location.withinRange = validRange
+                        nonValid = true
                         
                     } else {
                         message = "This location is not valid. Please add valid location information."
-                        nonValid = false
-                        
                     }
                 }){
-                    if (nonValid) {
+                    if (!nonValid) {
                         // NAVIGATION LINKS
                         NavigationLink(destination: GreenMapsView()) {
                             Text("Search!").padding()
@@ -97,37 +94,26 @@ struct GreenMapsSearchView: View {
                         }
                     } else {
                         Text(message).padding()
-                        Text("Search!")
+                        Text("Search!").padding()
                             .modifier(ButtonDesign())
                     }
                 }
             }
-            Spacer()
-        }
+        }.environmentObject(location)
     }
 }
 
 
 // Actual Maps and locations of carbon footprints based on search results
 struct GreenMapsView: View {
-    var body: some View {
-        Text("Results for closest carbon footprints...")
-    }
-}
-
-
-class CurrentLocation: ObservableObject {
-    @Published var country: String
-    @Published var state: String
-    @Published var city: String
-    @Published var zipCode: String
-    @Published var withinRange: Int
+    @EnvironmentObject var location: CurrentLocation
     
-    init(country: String, state: String, city: String, zipCode: String, withinRange: Int) {
-        self.country = country
-        self.state = state
-        self.city = city
-        self.zipCode = zipCode
-        self.withinRange = withinRange
+    var body: some View {
+        VStack {
+            Text("Results for closest carbon footprints...")
+            Spacer()
+            
+            Text(location.validPrint)
+        }
     }
 }
