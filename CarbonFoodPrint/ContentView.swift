@@ -34,7 +34,7 @@ struct ContentView: View {
                     Image(systemName: "camera")
                     Text("AR MODE")
                 }
-            BarView()
+            BarView(TheVar: $TheVar)
                 .tabItem {
                     Image(systemName: "scanner")
                     Text("BARCODE SCAN")

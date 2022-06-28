@@ -36,11 +36,17 @@ struct ARView: View {
         }
     }
 struct BarView: View {
+    @Binding var TheVar: String
     var body: some View {
 
         NavigationView {
             VStack {
                 Text("Barcode scanner goes here")
+                
+                NavigationLink(destination: VolunteerDetails(TheVar: $TheVar)) {
+                                        Text("See Notices")
+                                             .font(.caption)
+                                }//.padding(.bottom, 30)
                 /*
                 List {
                     Section(header: Text("Scanner goes here")) {
