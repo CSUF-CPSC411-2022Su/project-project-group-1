@@ -80,9 +80,6 @@ struct ContentView: View {
                     .background(Color.white)
                     .cornerRadius(25)
             }
-//            NavigationLink(destination: MealCategory()) {
-//                Text("Click here to fill out Breakfast, Lunch, and Dinner!")
-//            }
             HStack
             {
                 Spacer()
@@ -104,10 +101,10 @@ struct ContentView: View {
         Spacer()
         VStack
         {
-            Text(breakfast)
-            Text(lunch)
-            Text(dinner)
-            Text(transportation)
+            Text(amtOfPeople)
+            Text(animalProducts)
+            Text(carpoolToday)
+            Text(usedPublicTransporation)
         }
 //        TabView{
 //            carUsed.carDrivenDaily()
