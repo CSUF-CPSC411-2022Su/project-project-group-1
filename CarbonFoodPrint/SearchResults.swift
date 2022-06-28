@@ -25,9 +25,8 @@ class AlternativeFinder: ObservableObject{
     @Published var secondSearchResult = ""
     @Published var thirdSearchResult = ""
     @Published var fourthSearchResult = ""
-    @Published var fifthSearchResult = ""   
-    
-    
+    @Published var fifthSearchResult = ""
+   
     private var accessKey = "16806e0764bd161a885bc6b394b00a6792787530b4c3af860792080ef73a3489"
     
     func find(_ searchQuery: String){
@@ -63,5 +62,4 @@ class AlternativeFinder: ObservableObject{
             task.resume()
         }
     }
-    
 }

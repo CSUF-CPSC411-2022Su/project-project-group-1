@@ -9,8 +9,7 @@ import SwiftUI
 
 
 struct EnvObj: View {
-    @StateObject var searchResult: AlternativeFinder = AlternativeFinder()
-    
+    @EnvironmentObject var searchResult: AlternativeFinder 
     var body: some View {
         NavigationView{
             List{
