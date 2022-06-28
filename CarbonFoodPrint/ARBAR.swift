@@ -2,7 +2,7 @@
 //  ARBAR.swift
 //  CarbonFoodPrint
 //
-//  Created by Ethan Story on 6/27/22.
+//  Created by Jonathan Story on 6/27/22.
 //
 
 import Foundation
@@ -40,7 +40,7 @@ struct BarView: View {
 
         NavigationView {
             VStack {
-                Text("Scanner goes here")
+                Text("Barcode scanner goes here")
                 /*
                 List {
                     Section(header: Text("Scanner goes here")) {
