@@ -12,11 +12,33 @@ import SwiftUI
 struct ARView: View {
     var body: some View {
         
-        Text("Camera goes here")
+        //Text("Camera goes here")
         NavigationView {
             VStack {
                 List {
                     Section(header: Text("Camera goes here")) {
+                        NavigationLink(destination: Text("Name of the crosswalk")) {
+                            Text("Crosswalk name")
+                        }
+                        NavigationLink(destination: Text("Address of the crosswalk")) {
+                            Text("Crosswalk address")
+                        }
+                    }
+                
+                    
+                    }
+                }
+                Spacer()
+            }
+        }
+    }
+struct BarView: View {
+    var body: some View {
+
+        NavigationView {
+            VStack {
+                List {
+                    Section(header: Text("Scanner goes here")) {
                         NavigationLink(destination: Text("Name of the crosswalk")) {
                             Text("Crosswalk name")
                         }

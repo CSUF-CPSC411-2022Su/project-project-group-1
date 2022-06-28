@@ -32,7 +32,12 @@ struct ContentView: View {
             ARView()
                 .tabItem {
                     Image(systemName: "camera")
-                    Text("Crosswalks")
+                    Text("AR MODE")
+                }
+            BarView()
+                .tabItem {
+                    Image(systemName: "scanner")
+                    Text("BARCODE SCAN")
                 }
             //CrossWalkInfo()
               //  .tabItem {
@@ -45,6 +50,8 @@ struct ContentView: View {
                   //  Text("Add Crosswalk")
                // }
         }//.environmentObject(manager)
+        
+        /*
         NavigationView {
         VStack {
             Button(action: {
@@ -64,6 +71,7 @@ struct ContentView: View {
                             }//.padding(.bottom, 30)
         }
     }
+         */
     }
         
 }
