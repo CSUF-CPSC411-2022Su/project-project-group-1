@@ -2,10 +2,6 @@
 //  DataPersistance.swift
 //  CarbonFoodPrint
 //
-//  Created by csuftitan on 6/27/22.
-//
-
-import SwiftUI
 import Foundation
 
 class SearchHistory: ObservableObject{
@@ -23,11 +19,11 @@ class SearchHistory: ObservableObject{
         loadPreviousSearchs()
     }
     
-    func addSearchList(_ searchQuery:String){
+    func addSearchList(_ search:String){
         if searchList.count == maxsearches{
             searchList.remove(at:maxsearches - 1)
         }
-        searchList.insert(searchQuery,at:0)
+        searchList.insert(search,at:0)
         saveSearchs()
     }
     

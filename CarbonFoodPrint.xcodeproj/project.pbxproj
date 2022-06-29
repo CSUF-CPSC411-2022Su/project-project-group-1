@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A388D9F286163870014DB5D /* NavMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A388D9E286163870014DB5D /* NavMenu.swift */; };
-		7A388DA1286193AB0014DB5D /* Env Obj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A388DA0286193AB0014DB5D /* Env Obj.swift */; };
-		7A3F36202869A84D0030B58F /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F361F2869A84D0030B58F /* ScreenView.swift */; };
+		7A15598F286BDFE1007F83B5 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A15598E286BDFE1007F83B5 /* Navigation.swift */; };
+		7A155999286C3BB4007F83B5 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A155998286C3BB4007F83B5 /* SideMenu.swift */; };
 		7A3F36242869A98C0030B58F /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F36232869A98C0030B58F /* SearchResults.swift */; };
-		7A420650286A892A00D1AA29 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A42064F286A892A00D1AA29 /* Persistance.swift */; };
 		7A4206BE286AD36400D1AA29 /* DataPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4206BD286AD36400D1AA29 /* DataPersistance.swift */; };
 		7A5DAC79285837D2009C3528 /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */; };
 		C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */; };
@@ -41,11 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A388D9E286163870014DB5D /* NavMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenu.swift; sourceTree = "<group>"; };
-		7A388DA0286193AB0014DB5D /* Env Obj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Env Obj.swift"; sourceTree = "<group>"; };
-		7A3F361F2869A84D0030B58F /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
+		7A15598E286BDFE1007F83B5 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		7A155998286C3BB4007F83B5 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		7A3F36232869A98C0030B58F /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
-		7A42064F286A892A00D1AA29 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		7A4206BD286AD36400D1AA29 /* DataPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistance.swift; sourceTree = "<group>"; };
 		7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
 		C44AD81928511E9E004A8A11 /* CarbonFoodPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonFoodPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,12 +107,10 @@
 				C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */,
 				7A4206BD286AD36400D1AA29 /* DataPersistance.swift */,
 				7A3F36232869A98C0030B58F /* SearchResults.swift */,
-				7A3F361F2869A84D0030B58F /* ScreenView.swift */,
-				7A388DA0286193AB0014DB5D /* Env Obj.swift */,
-				7A42064F286A892A00D1AA29 /* Persistance.swift */,
+				7A155998286C3BB4007F83B5 /* SideMenu.swift */,
+				7A15598E286BDFE1007F83B5 /* Navigation.swift */,
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
 				7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */,
-				7A388D9E286163870014DB5D /* NavMenu.swift */,
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
 			);
@@ -281,12 +275,10 @@
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
 				7A4206BE286AD36400D1AA29 /* DataPersistance.swift in Sources */,
-				7A388DA1286193AB0014DB5D /* Env Obj.swift in Sources */,
-				7A388D9F286163870014DB5D /* NavMenu.swift in Sources */,
+				7A155999286C3BB4007F83B5 /* SideMenu.swift in Sources */,
 				7A5DAC79285837D2009C3528 /* HamburgerMenu.swift in Sources */,
-				7A420650286A892A00D1AA29 /* Persistance.swift in Sources */,
+				7A15598F286BDFE1007F83B5 /* Navigation.swift in Sources */,
 				7A3F36242869A98C0030B58F /* SearchResults.swift in Sources */,
-				7A3F36202869A84D0030B58F /* ScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
