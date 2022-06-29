@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     //@StateObject var volunteer = Volunteer(name: "", age: 0)
     @State var TheVar: String = "*This is the string variable passed from the first page*"
-    @State var TheList: String = "Banana Info"
+    //@State var TheList = ["Banana": 234, "Apple": 347, "Orange": 21 ]
+    @State var TheList: String = "Info goes here"
     //@State var age: String = ""
     //@State var message: String = ""
     var body: some View {
@@ -159,7 +160,8 @@ struct ListViewer: View {
             HStack {
                 //Spacer()
                 //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
-                ListInfo(TheList: $TheList).padding()
+                //ListInfo(TheList: $TheList).padding()
+                Text(TheList)
                 //Text("Ages 18 - 50:")
                 //Text("6 hours").bold()
             }
