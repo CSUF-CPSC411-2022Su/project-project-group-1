@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct BananaViewer: View {
+    @SceneStorage("productName") var productName: String = "Banana"
+    @SceneStorage("productDescrip") var productDescrip: String = "The common Banana produces 114.08 million metric tons of waste due to waste-loss."
     //@Binding var TheBunch: Int
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
@@ -35,13 +37,23 @@ struct BananaViewer: View {
                 
                 Spacer()
             }
+            Button(action: {
+                man.products.append(Product(name: productName, description: productDescrip))
+            }) {
+                Text("Add to Product Information List")
+                    .modifier(ButtonDesign())
+            }
             Spacer()
+            //Spacer()
         }
     }
 }
 
 struct AppleViewer: View {
+    @SceneStorage("productName") var productName: String = "Apple"
+    @SceneStorage("productDescrip") var productDescrip: String = "The common Apple produces 114.08 million metric tons of waste due to waste-loss."
     //@Binding var TheList: String
+    @EnvironmentObject var man: ProductManager
     var body: some View {
         VStack {
             Text("Information for Apple")
@@ -52,7 +64,14 @@ struct AppleViewer: View {
                 
                 Spacer()
             }
+            Button(action: {
+                man.products.append(Product(name: productName, description: productDescrip))
+            }) {
+                Text("Add to Product Information List")
+                    .modifier(ButtonDesign())
+            }
             Spacer()
+            //Spacer()
         }
     }
 }
@@ -74,6 +93,7 @@ struct OrangeViewer: View {
                 Spacer()
             }
             Button(action: {
+                //Text("Added")
                 man.products.append(Product(name: productName, description: productDescrip))
             }) {
                 Text("Add to Product Information List")
@@ -81,7 +101,7 @@ struct OrangeViewer: View {
             }
             Spacer()
             
-            Spacer()
+            //Spacer()
         }
     }
 }
@@ -119,9 +139,9 @@ class ProductManager: ObservableObject {
     
     init() {
         // Add initial crosswalks for testing
-        products.append(Product(name: "Apple", description: "Produces a certain amount of waste."))
-        products.append(Product(name: "Banana", description: "Produces a certain amount of waste."))
-        products.append(Product(name: "Orange", description: "Produces a certain amount of waste."))
+        //products.append(Product(name: "Apple", description: "Produces a certain amount of waste."))
+        //products.append(Product(name: "Banana", description: "Produces a certain amount of waste."))
+        //products.append(Product(name: "Orange", description: "Produces a certain amount of waste."))
         
         //crosswalks.append(CrossWalk(name: "McCarthy Hall", description: "The Only Campus Dr. Fullerton, CA 92831"))
     }
