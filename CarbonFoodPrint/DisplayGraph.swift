@@ -89,4 +89,3 @@ struct DisplayMap: View {
         }
     }
 }
-
