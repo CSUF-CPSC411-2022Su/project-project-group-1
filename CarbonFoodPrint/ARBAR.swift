@@ -55,10 +55,16 @@ struct BarView: View {
                     Text("Scan Banana").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
+                NavigationLink(destination: OrangeViewer()) {
+                    Text("Scan Orange").bold().modifier(ButtonDesign())
+                                             .font(.caption)
+                                }//.padding(.bottom, 30)
+                /*
                 NavigationLink(destination: ListViewer(TheList: $TheList)) {
                     Text("Scan Orange").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
+                 */
                 /*
                 Button(action: {
                     print("Was clicked")

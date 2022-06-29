@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var TheList: String = "Info goes here"
     //@State var age: String = ""
     //@State var message: String = ""
+   // @State var TheChoice: Int = 0
     var body: some View {
         //Text("Hello, world!")
             //.padding()
@@ -147,6 +148,7 @@ struct VolunteerDetails: View {
 
 struct ListViewer: View {
     @Binding var TheList: String
+    //@State var TheChoice: Int
     var body: some View {
         VStack {
             Text("Information for Items")
@@ -192,36 +194,3 @@ struct ItemView: Identifiable {
 
 
 
-struct BananaViewer: View {
-    //@Binding var TheList: String
-    var body: some View {
-        VStack {
-            Text("Information for Banana")
-                .font(.headline)
-                .padding(.bottom, 30)
-            HStack {
-                Text("The common banana produces 114.08 million metric tons of waste due to waste-loss.")
-                
-                Spacer()
-            }
-            Spacer()
-        }
-    }
-}
-
-struct AppleViewer: View {
-    //@Binding var TheList: String
-    var body: some View {
-        VStack {
-            Text("Information for Apple")
-                .font(.headline)
-                .padding(.bottom, 30)
-            HStack {
-                Text("The common apple produces 114.08 million metric tons of waste due to waste-loss.")
-                
-                Spacer()
-            }
-            Spacer()
-        }
-    }
-}

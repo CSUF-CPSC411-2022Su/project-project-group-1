@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28686166286AB58900E4446E /* ARBAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28686165286AB58800E4446E /* ARBAR.swift */; };
+		7A1C0066286C022200596ABB /* ProductInfoDisplays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C0065286C022200596ABB /* ProductInfoDisplays.swift */; };
 		C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */; };
 		C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81E28511E9E004A8A11 /* ContentView.swift */; };
 		C44AD82128511E9F004A8A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44AD82028511E9F004A8A11 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		28686165286AB58800E4446E /* ARBAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBAR.swift; sourceTree = "<group>"; };
+		7A1C0065286C022200596ABB /* ProductInfoDisplays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoDisplays.swift; sourceTree = "<group>"; };
 		C44AD81928511E9E004A8A11 /* CarbonFoodPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonFoodPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintApp.swift; sourceTree = "<group>"; };
 		C44AD81E28511E9E004A8A11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		C44AD81B28511E9E004A8A11 /* CarbonFoodPrint */ = {
 			isa = PBXGroup;
 			children = (
+				7A1C0065286C022200596ABB /* ProductInfoDisplays.swift */,
 				C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */,
 				28686165286AB58800E4446E /* ARBAR.swift */,
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
@@ -264,6 +267,7 @@
 			files = (
 				28686166286AB58900E4446E /* ARBAR.swift in Sources */,
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
+				7A1C0066286C022200596ABB /* ProductInfoDisplays.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
