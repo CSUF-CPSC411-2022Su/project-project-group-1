@@ -10,7 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            BarcodeFeature()
+            
+            
+            
+            
+            
+            
+            BarcodeFeature().padding(.bottom, 30)
         }
     
 }
