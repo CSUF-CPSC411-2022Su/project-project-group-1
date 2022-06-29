@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @State var breakfast: String = ""
-//    @State var lunch: String = ""
-//    @State var dinner: String = ""
-//    @State var transportation: String = ""
-//    @State var milesDriven: String = ""
-    
     @AppStorage ("amtOfPeople") var amtOfPeople: String = ""
     @AppStorage ("animalProducts") var animalProducts: String = ""
     @AppStorage ("carpoolToday") var carpoolToday: String = ""
     @AppStorage ("usedPublicTransporation") var usedPublicTransporation: String = ""
-    @StateObject var carUsed = totalCO2()
+    @AppStorage ("carUsedToday") var carUsedToday: String = ""
+    let carDisplay = ["Toyota Corolla", "Tesla Model Y", "Nissan Leaf", "Honda Civic"]
+    @StateObject var carUsed = CarsDisplay()
     
     var body: some View
     {
@@ -30,6 +26,7 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.black)
                     .padding()
+                    //.padding()
             }
             HStack
             {
@@ -97,78 +94,38 @@ struct ContentView: View {
                     .cornerRadius(25)
                 Spacer()
             }
+            HStack
+            {
+                Spacer()
+                Text("What type of car did you use today?  ")
+//                List{
+//                    ForEach(carUsed.carTypes) {
+//                        car in
+//                        VStack(alignment: .leading) {
+//                            Text("Car")
+//                        }
+//                    }
+//                }
+                    .foregroundColor(.black)
+                    .font(.custom("Menlo", size: 16))
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+                TextField("", text: $carUsedToday)
+                    .foregroundColor(.black)
+                    .font(.custom("Menlo", size: 16))
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(25)
+                Spacer()
+            }
         }.background(Color.blue)
-        Spacer()
-        VStack
-        {
-            Text(amtOfPeople)
-            Text(animalProducts)
-            Text(carpoolToday)
-            Text(usedPublicTransporation)
-        }
-//        TabView{
-//            carUsed.carDrivenDaily()
-//            .tabItem {
-//                Image(systemName: "car")
-        //text("Daily Report
-
-//                Text("Crosswalks")
-//            }
-//        }.environmentObject(carUsed)
+        
     }
 }
-
-        
-        
-        
-//        TabView
-//        {
-//            //since i want to do tab view, make sure each
-//            //question can be seen with each swipe
-//            Text("First Question")
-//            Text("This can be second ?")
-//            Text("Third Question")
-//        }
-//        Text("Hello from Weekly!!").padding()
-//        .tabViewStyle(.page)
-//        .indexViewStyle(.page(backgroundDisplayMode: .always))
-//        DailyReport()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
-
-//struct ContentView: View {
-//    @StateObject var manager = CrosswalkManager()
-//    // ^ the class will be seen everywhere/views
-//    var body: some View {
-//        // TODO: Model 4 - Replace VStack with TabView
-//        TabView {
-//            EditableCrosswalkList()
-//                .tabItem {
-//                    Image(systemName: "car")
-//                    Text("Crosswalks")
-//                }
-//            CrossWalkInfo()
-//                .tabItem {
-//                    Image(systemName: "info")
-//                    Text("Crosswalk Info")
-//                }
-//            // TODO: Model 4 - Add AddCrossWalk as a TabView
-//            AddCrossWalk()
-//                .tabItem {
-//                    Image(systemName: "plus")
-//                    Text("Add CrossWalk")
-//                }
-//        }.environmentObject(manager)
-//    }
-//}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}

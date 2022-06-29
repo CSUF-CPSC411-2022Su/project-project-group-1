@@ -2,7 +2,7 @@
 //  MainView.swift
 //  CarbonFoodPrint
 //
-//  Created by Mario  on 6/27/22.
+//  Created by Britney  on 6/27/22.
 //
 
 import Foundation
@@ -10,6 +10,8 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var dailyInfo = totalCO2()
+    @StateObject var displayCars = CarsDisplay()
+//    @StateObject var carsOnly = OnlyCars()
     var body: some View {
         TabView {
             ContentView()

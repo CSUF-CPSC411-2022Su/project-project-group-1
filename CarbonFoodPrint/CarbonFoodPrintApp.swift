@@ -14,7 +14,6 @@ struct CarbonFoodPrintApp: App {
         WindowGroup {
             MainView()
                 .environmentObject(daily)
-//            ContentView()
         }
     }
 }

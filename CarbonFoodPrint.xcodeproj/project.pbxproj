@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C10542C28586BE20030CB3B /* DailyWeeklyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10542B28586BE20030CB3B /* DailyWeeklyReport.swift */; };
+		7C10542C28586BE20030CB3B /* DailyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10542B28586BE20030CB3B /* DailyReport.swift */; };
 		ACD51EAC286A278600178C28 /* DailyReportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD51EAB286A278600178C28 /* DailyReportViews.swift */; };
 		ACD51EAE286AC9AA00178C28 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD51EAD286AC9AA00178C28 /* MainView.swift */; };
 		C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C10542B28586BE20030CB3B /* DailyWeeklyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeeklyReport.swift; sourceTree = "<group>"; };
+		7C10542B28586BE20030CB3B /* DailyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReport.swift; sourceTree = "<group>"; };
 		ACD51EAB286A278600178C28 /* DailyReportViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViews.swift; sourceTree = "<group>"; };
 		ACD51EAD286AC9AA00178C28 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C44AD81928511E9E004A8A11 /* CarbonFoodPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonFoodPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +106,7 @@
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
 				ACD51EAD286AC9AA00178C28 /* MainView.swift */,
 				ACD51EAB286A278600178C28 /* DailyReportViews.swift */,
-				7C10542B28586BE20030CB3B /* DailyWeeklyReport.swift */,
+				7C10542B28586BE20030CB3B /* DailyReport.swift */,
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
 			);
@@ -269,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
-				7C10542C28586BE20030CB3B /* DailyWeeklyReport.swift in Sources */,
+				7C10542C28586BE20030CB3B /* DailyReport.swift in Sources */,
 				ACD51EAC286A278600178C28 /* DailyReportViews.swift in Sources */,
 				ACD51EAE286AC9AA00178C28 /* MainView.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
