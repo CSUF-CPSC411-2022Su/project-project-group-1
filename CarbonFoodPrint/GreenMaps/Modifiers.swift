@@ -8,6 +8,14 @@
 import SwiftUI
 import Foundation
 
+struct MainDisplayView: View {
+    var body: some View {
+        Spacer()
+        Text("Hello World!").padding()
+        Spacer()
+    }
+}
+
 struct RoundedBackground: ViewModifier {
     func body(content: Content) -> some View {
         content

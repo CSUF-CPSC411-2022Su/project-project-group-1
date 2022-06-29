@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var manager = LocationManager()
+    
     var body: some View {
-//        Text("Hello World!").padding()
-        GreenMapsMenuView()
+        TabView {
+//            MainDisplayView()
+//                .tabItem {
+//                    Image(systemName: "plus")
+//                    Text("MainMenu")
+//                }
+            GreenMapsMenuView()
+                .tabItem {
+                    Image(systemName: "car")
+                    Text("GreenMaps")
+                }
+        }.environmentObject(manager)
     }
 }
 

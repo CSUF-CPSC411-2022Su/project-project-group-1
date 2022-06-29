@@ -24,6 +24,11 @@ class CurrentLocation: ObservableObject {
         }
         return list
     }
+    var toMeters: Int {
+        var meters: Int = 0
+        meters = Int(Double(withinRange) * 1609.33)
+        return meters
+    }
     
     init(country: String, state: String, city: String, zipCode: String, withinRange: Int) {
         self.country = country
@@ -40,4 +45,13 @@ class CurrentLocation: ObservableObject {
         self.zipCode = ""
         self.withinRange = 0
     }
+}
+
+class LocationManager: ObservableObject {
+    @Published var locations: [CurrentLocation] = []
+    
+    init() {
+
+    }
+    
 }
