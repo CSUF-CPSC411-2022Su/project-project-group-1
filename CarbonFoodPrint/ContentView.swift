@@ -174,7 +174,7 @@ struct ListViewer: View {
                 
                 //Text("Ages 18 - 50:")
                 //Text("6 hours").bold()
-                
+                /*
                 ForEach(man.products) {
                     product in
                     VStack (alignment: .leading) {
@@ -184,6 +184,7 @@ struct ListViewer: View {
                             .font(.caption)
                     }
                 }
+                */
             }
             Spacer()
         }

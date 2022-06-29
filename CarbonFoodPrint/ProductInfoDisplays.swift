@@ -58,9 +58,13 @@ struct AppleViewer: View {
 }
 
 struct OrangeViewer: View {
+    @SceneStorage("productName") var productName: String = "Orange"
+    @SceneStorage("productDescrip") var productDescrip: String = "The common Orange produces 114.08 million metric tons of waste due to waste-loss."
     //@Binding var TheList: String
+    @EnvironmentObject var man: ProductManager
     var body: some View {
         VStack {
+            
             Text("Information for Orange")
                 .font(.headline)
                 .padding(.bottom, 30)
@@ -69,6 +73,14 @@ struct OrangeViewer: View {
                 
                 Spacer()
             }
+            Button(action: {
+                man.products.append(Product(name: productName, description: productDescrip))
+            }) {
+                Text("Add to Product Information List")
+                    .modifier(ButtonDesign())
+            }
+            Spacer()
+            
             Spacer()
         }
     }
