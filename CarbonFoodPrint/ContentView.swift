@@ -10,12 +10,14 @@ import SwiftUI
 struct ContentView: View {
     //@StateObject var volunteer = Volunteer(name: "", age: 0)
     @State var TheVar: String = "*This is the string variable passed from the first page*"
-    //@State var TheList = ["Banana": 234, "Apple": 347, "Orange": 21 ]
+    @State var TheBunch = ["Banana": 234, "Apple": 347, "Orange": 21 ]
     @State var TheList: String = "Info goes here"
     //@State var age: String = ""
     //@State var message: String = ""
    // @State var TheChoice: Int = 0
     @StateObject var man = ProductManager()
+    
+    //@State let dict: [String: Int] =
     var body: some View {
         //Text("Hello, world!")
             //.padding()
@@ -172,15 +174,16 @@ struct ListViewer: View {
                 
                 //Text("Ages 18 - 50:")
                 //Text("6 hours").bold()
-            }
-
-            HStack {
-                //Text("Ages 51 - 60:")
-                //Text("3 hours").bold()
-            }//.padding(.bottom, 30)
-            HStack {
-                //Text("*People below 13 and over 60 are not eligible to volunteer.")
-                    //.font(.caption)
+                
+                ForEach(man.products) {
+                    product in
+                    VStack (alignment: .leading) {
+                        Text(product.name)
+                            .font(.largeTitle)
+                        Text(product.description)
+                            .font(.caption)
+                    }
+                }
             }
             Spacer()
         }

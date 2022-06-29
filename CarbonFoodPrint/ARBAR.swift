@@ -59,6 +59,11 @@ struct BarView: View {
                     Text("Scan Orange").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
+                NavigationLink(destination: TotalListViewer()) {
+                    Text("See total list of items").bold().modifier(ButtonDesign())
+                                             .font(.caption)
+                                }//.padding(.bottom, 30)
+                
                 /*
                 NavigationLink(destination: ListViewer(TheList: $TheList)) {
                     Text("Scan Orange").bold().modifier(ButtonDesign())
