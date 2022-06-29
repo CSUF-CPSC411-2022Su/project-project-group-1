@@ -16,6 +16,10 @@
 		7A3F36242869A98C0030B58F /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F36232869A98C0030B58F /* SearchResults.swift */; };
 		7A4206BE286AD36400D1AA29 /* DataPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4206BD286AD36400D1AA29 /* DataPersistance.swift */; };
 		7A5DAC79285837D2009C3528 /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */; };
+		7C10542C28586BE20030CB3B /* DailyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10542B28586BE20030CB3B /* DailyReport.swift */; };
+		7C105430286C660C0030CB3B /* DailyContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10542F286C660C0030CB3B /* DailyContent.swift */; };
+		ACD51EAC286A278600178C28 /* DailyReportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD51EAB286A278600178C28 /* DailyReportViews.swift */; };
+		ACD51EAE286AC9AA00178C28 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD51EAD286AC9AA00178C28 /* MainView.swift */; };
 		C414608D285D7835002A72F5 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414608C285D7835002A72F5 /* DisplayManager.swift */; };
 		C41D810028695B6E00498E02 /* DisplayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D80FF28695B6200498E02 /* DisplayGraph.swift */; };
 		C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */; };
@@ -57,6 +61,10 @@
 		7A3F36232869A98C0030B58F /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		7A4206BD286AD36400D1AA29 /* DataPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistance.swift; sourceTree = "<group>"; };
 		7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
+		7C10542B28586BE20030CB3B /* DailyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReport.swift; sourceTree = "<group>"; };
+		7C10542F286C660C0030CB3B /* DailyContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyContent.swift; sourceTree = "<group>"; };
+		ACD51EAB286A278600178C28 /* DailyReportViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportViews.swift; sourceTree = "<group>"; };
+		ACD51EAD286AC9AA00178C28 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C414608C285D7835002A72F5 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
 		C41D80FF28695B6200498E02 /* DisplayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGraph.swift; sourceTree = "<group>"; };
 		C44AD81928511E9E004A8A11 /* CarbonFoodPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonFoodPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +140,11 @@
 				7A15598E286BDFE1007F83B5 /* Navigation.swift */,
 				7A15599A286C40FF007F83B5 /* SearchAlternativeViewModel.swift */,
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
+				7C10542F286C660C0030CB3B /* DailyContent.swift */,
 				7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */,
+				ACD51EAD286AC9AA00178C28 /* MainView.swift */,
+				ACD51EAB286A278600178C28 /* DailyReportViews.swift */,
+				7C10542B28586BE20030CB3B /* DailyReport.swift */,
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
 				C4DB971B285127C100D25BA8 /* DisplayView.swift */,
@@ -309,10 +321,14 @@
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
 				C41D810028695B6E00498E02 /* DisplayGraph.swift in Sources */,
 				C4FE48E82868D9EF0037BCD2 /* DisplayModifier.swift in Sources */,
+				7C10542C28586BE20030CB3B /* DailyReport.swift in Sources */,
+				ACD51EAC286A278600178C28 /* DailyReportViews.swift in Sources */,
+				ACD51EAE286AC9AA00178C28 /* MainView.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
 				C4DB971C285127C100D25BA8 /* DisplayView.swift in Sources */,
 				7A4206BE286AD36400D1AA29 /* DataPersistance.swift in Sources */,
 				7A155999286C3BB4007F83B5 /* SideMenu.swift in Sources */,
+				7C105430286C660C0030CB3B /* DailyContent.swift in Sources */,
 				7A5DAC79285837D2009C3528 /* HamburgerMenu.swift in Sources */,
 				7A15598F286BDFE1007F83B5 /* Navigation.swift in Sources */,
 				7A3F36242869A98C0030B58F /* SearchResults.swift in Sources */,

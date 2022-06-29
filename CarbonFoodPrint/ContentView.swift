@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View{
         TabView{
             DisplayView()
@@ -26,10 +25,18 @@ struct ContentView: View {
                     Image(systemName: "camera")
                     Text("Barcode Scanner ")
                 }.padding(.bottom, 30)
-                
-        }
+            DailyContent()
+                .tabItem{
+                    Image(systemName: "info")
+                    Text("Daily Inquires")
+                }
+            DailyReport()
+                .tabItem {
+                    Label("Daily Results", systemImage: "list.dash")
+                }
         }//.padding()
     }
+}
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -37,11 +44,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-
-
-
-
-
-
