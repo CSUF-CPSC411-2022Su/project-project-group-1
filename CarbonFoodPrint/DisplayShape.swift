@@ -25,12 +25,12 @@ struct CoverageMap: Shape {
 }
 
 struct DashedLine: Shape {
-    // https://stackoverflow.com/questions/65248710/swiftui-how-to-make-a-vertical-dotted-line-using-shape
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+        path.move(to: CGPoint(x: rect.maxX / 2, y: 0))
+        path.addLine(to: CGPoint(x: rect.maxX / 2, y: rect.maxY))
+        path.move(to: CGPoint(x: rect.maxX / 2, y: 0))
 
         return path
     }

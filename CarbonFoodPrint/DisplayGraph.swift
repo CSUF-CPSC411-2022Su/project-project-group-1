@@ -13,7 +13,6 @@ struct DisplayGraph: View {
     @State private var formatOptions = [
         "Bar": "chart.bar.fill",
         "Map": "map.fill",
-        "Pie": "chart.pie.fill"
     ]
 
     var body: some View {
@@ -35,10 +34,8 @@ struct DisplayGraph: View {
                     DisplayBar()
                 case "Map":
                     DisplayMap()
-                case "Pie":
-                    DisplayPie()
                 default:
-                    Text("Empty")
+                    Text("NA")
             }
         }
     }
@@ -77,16 +74,15 @@ struct DisplayMap: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                // https://stackoverflow.com/questions/65248710/swiftui-how-to-make-a-vertical-dotted-line-using-shape
                 DashedLine()
                     .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
                     .frame(width: 1, height: geometry.size.height)
                     .foregroundColor(.gray)
                 DashedLine()
                     .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                    .frame(width: geometry.size.width, height: geometry.size.height / 2)
+                    .frame(minWidth: 0, maxWidth: geometry.size.width)
                     .foregroundColor(.gray)
-                    .rotationEffect(.degrees(-36.5))
+                    .rotationEffect(.degrees(90))
                 CoverageMap(bound: manager.display.map { CGFloat($0) })
                     .fill(Color("BabyBlue").opacity(0.5))
             }
@@ -94,8 +90,3 @@ struct DisplayMap: View {
     }
 }
 
-struct DisplayPie: View {
-    var body: some View {
-        Text("pie todo")
-    }
-}
