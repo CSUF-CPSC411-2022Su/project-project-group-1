@@ -15,6 +15,7 @@ struct BananaViewer: View {
     //@Binding var TheBunch: Int
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
+    @Binding var cost: Int
     var body: some View {
         VStack {
             
@@ -39,6 +40,7 @@ struct BananaViewer: View {
             }
             Button(action: {
                 man.products.append(Product(name: productName, description: productDescrip))
+                cost += 2
             }) {
                 Text("Add to Product Shopping List")
                     .modifier(ButtonDesign())
@@ -54,6 +56,7 @@ struct AppleViewer: View {
     @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $5.00"
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
+    @Binding var cost: Int
     var body: some View {
         VStack {
             Text("Information for Apple")
@@ -66,6 +69,7 @@ struct AppleViewer: View {
             }
             Button(action: {
                 man.products.append(Product(name: productName, description: productDescrip))
+                cost += 5
             }) {
                 Text("Add to Shopping List")
                     .modifier(ButtonDesign())
@@ -81,6 +85,7 @@ struct OrangeViewer: View {
     @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $4.00"
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
+    @Binding var cost: Int
     //@State var message: String = "Added!"
     var body: some View {
         VStack {
@@ -96,6 +101,7 @@ struct OrangeViewer: View {
             Button(action: {
                 //Text(message)
                 man.products.append(Product(name: productName, description: productDescrip))
+                cost += 4
             }) {
                 Text("Add to Shopping List")
                     .modifier(ButtonDesign())

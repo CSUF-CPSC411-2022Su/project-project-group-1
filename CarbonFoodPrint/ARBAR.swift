@@ -40,7 +40,7 @@ struct BarView: View {
     @Binding var TheVar: String
     @Binding var TheList: String
     //@State var TheChoice: Int
-    
+    @Binding var cost: Int
     var body: some View {
 
         NavigationView {
@@ -48,15 +48,15 @@ struct BarView: View {
                 //Text("Barcode scanner goes here")
                 
                 //NavigationLink(destination: ListInfo(TheList: $TheList)) {
-                NavigationLink(destination: AppleViewer()) {
+                NavigationLink(destination: AppleViewer(cost: $cost)) {
                     Text("Scan Apple").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
-                NavigationLink(destination: BananaViewer()) {
+                NavigationLink(destination: BananaViewer(cost: $cost)) {
                     Text("Scan Banana").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
-                NavigationLink(destination: OrangeViewer()) {
+                NavigationLink(destination: OrangeViewer(cost: $cost)) {
                     Text("Scan Orange").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
@@ -112,6 +112,7 @@ struct TotalListViewer: View {
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
     //@State var TheChoice: Int
+    @Binding var cost: Int
     var body: some View {
         VStack {
         
@@ -136,6 +137,8 @@ struct TotalListViewer: View {
             }
             
         }
+            Spacer()
+            Text("The total cost is: $\(cost) dollars.")
             Spacer()
             Text("There are currently \(man.products.count) items in the list.")
                             .padding(.bottom, 10)

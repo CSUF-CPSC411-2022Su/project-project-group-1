@@ -16,6 +16,7 @@ struct ContentView: View {
     //@State var message: String = ""
    // @State var TheChoice: Int = 0
     @StateObject var man = ProductManager()
+    @State var cost: Int = 0
     
     //@State let dict: [String: Int] =
     var body: some View {
@@ -35,12 +36,12 @@ struct ContentView: View {
             
         }
         TabView {
-            TotalListViewer()
+            TotalListViewer(cost: $cost)
                 .tabItem {
                     Image(systemName: "info")
                     Text("LIST OF ITEMS")
                 }
-            BarView(TheVar: $TheVar, TheList: $TheList)
+            BarView(TheVar: $TheVar, TheList: $TheList, cost: $cost)
                 .tabItem {
                     Image(systemName: "camera")
                     Text("BARCODE SCAN")
