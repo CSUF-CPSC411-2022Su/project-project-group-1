@@ -38,6 +38,7 @@ struct ARView: View {
 struct BarView: View {
     @Binding var TheVar: String
     @Binding var TheList: String
+    //@State var TheChoice: Int
     
     var body: some View {
 
@@ -48,6 +49,14 @@ struct BarView: View {
                 //NavigationLink(destination: ListInfo(TheList: $TheList)) {
                 NavigationLink(destination: ListViewer(TheList: $TheList)) {
                     Text("Scan Bannana").bold().modifier(ButtonDesign())
+                                             .font(.caption)
+                                }//.padding(.bottom, 30)
+                NavigationLink(destination: ListViewer(TheList: $TheList)) {
+                    Text("Scan Apple").bold().modifier(ButtonDesign())
+                                             .font(.caption)
+                                }//.padding(.bottom, 30)
+                NavigationLink(destination: ListViewer(TheList: $TheList)) {
+                    Text("Scan Orange").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
                 /*

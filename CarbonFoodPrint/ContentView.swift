@@ -148,7 +148,7 @@ struct ListViewer: View {
     @Binding var TheList: String
     var body: some View {
         VStack {
-            Text("Information for Bananas")
+            Text("Information for Items")
                 .font(.headline)
                 .padding(.bottom, 30)
             HStack {
@@ -160,6 +160,44 @@ struct ListViewer: View {
                 //Spacer()
                 //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
                 ListInfo(TheList: $TheList).padding()
+                //Text("Ages 18 - 50:")
+                //Text("6 hours").bold()
+            }
+
+            HStack {
+                //Text("Ages 51 - 60:")
+                //Text("3 hours").bold()
+            }//.padding(.bottom, 30)
+            HStack {
+                //Text("*People below 13 and over 60 are not eligible to volunteer.")
+                    //.font(.caption)
+            }
+            Spacer()
+        }
+    }
+}
+
+
+
+
+
+
+struct BananaViewer: View {
+    //@Binding var TheList: String
+    var body: some View {
+        VStack {
+            Text("Information for Banana")
+                .font(.headline)
+                .padding(.bottom, 30)
+            HStack {
+                Text("The common banana produces 114.08 million metric tons of waste due to waste-loss.")
+                
+                Spacer()
+            }
+            HStack {
+                //Spacer()
+                //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
+                //ListInfo(TheList: $TheList).padding()
                 //Text("Ages 18 - 50:")
                 //Text("6 hours").bold()
             }
