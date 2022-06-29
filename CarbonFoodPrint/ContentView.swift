@@ -179,6 +179,14 @@ struct ListViewer: View {
 
 
 
+struct ItemView: Identifiable {
+    /// The Identifiable protocol requires an id property that should be a unique value
+    /// UUID generates a unique random hexadecimal string
+    var id = UUID()
+    var productName: String
+    var description: String
+}
+
 
 
 
@@ -194,21 +202,22 @@ struct BananaViewer: View {
                 
                 Spacer()
             }
-            HStack {
-                //Spacer()
-                //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
-                //ListInfo(TheList: $TheList).padding()
-                //Text("Ages 18 - 50:")
-                //Text("6 hours").bold()
-            }
+            Spacer()
+        }
+    }
+}
 
+struct AppleViewer: View {
+    //@Binding var TheList: String
+    var body: some View {
+        VStack {
+            Text("Information for Apple")
+                .font(.headline)
+                .padding(.bottom, 30)
             HStack {
-                //Text("Ages 51 - 60:")
-                //Text("3 hours").bold()
-            }//.padding(.bottom, 30)
-            HStack {
-                //Text("*People below 13 and over 60 are not eligible to volunteer.")
-                    //.font(.caption)
+                Text("The common apple produces 114.08 million metric tons of waste due to waste-loss.")
+                
+                Spacer()
             }
             Spacer()
         }

@@ -47,12 +47,12 @@ struct BarView: View {
                 //Text("Barcode scanner goes here")
                 
                 //NavigationLink(destination: ListInfo(TheList: $TheList)) {
-                NavigationLink(destination: ListViewer(TheList: $TheList)) {
-                    Text("Scan Bannana").bold().modifier(ButtonDesign())
+                NavigationLink(destination: AppleViewer()) {
+                    Text("Scan Apple").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
-                NavigationLink(destination: ListViewer(TheList: $TheList)) {
-                    Text("Scan Apple").bold().modifier(ButtonDesign())
+                NavigationLink(destination: BananaViewer()) {
+                    Text("Scan Banana").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
                 NavigationLink(destination: ListViewer(TheList: $TheList)) {
