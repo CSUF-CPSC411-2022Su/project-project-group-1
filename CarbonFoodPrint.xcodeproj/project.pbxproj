@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		C414608D285D7835002A72F5 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414608C285D7835002A72F5 /* DisplayManager.swift */; };
 		C41D810028695B6E00498E02 /* DisplayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D80FF28695B6200498E02 /* DisplayGraph.swift */; };
+		7A15598F286BDFE1007F83B5 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A15598E286BDFE1007F83B5 /* Navigation.swift */; };
+		7A155999286C3BB4007F83B5 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A155998286C3BB4007F83B5 /* SideMenu.swift */; };
+		7A15599B286C40FF007F83B5 /* SearchAlternativeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A15599A286C40FF007F83B5 /* SearchAlternativeViewModel.swift */; };
+		7A3F36242869A98C0030B58F /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F36232869A98C0030B58F /* SearchResults.swift */; };
+		7A4206BE286AD36400D1AA29 /* DataPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4206BD286AD36400D1AA29 /* DataPersistance.swift */; };
+		7A5DAC79285837D2009C3528 /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */; };
 		C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */; };
 		C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD81E28511E9E004A8A11 /* ContentView.swift */; };
 		C44AD82128511E9F004A8A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44AD82028511E9F004A8A11 /* Assets.xcassets */; };
@@ -41,6 +47,12 @@
 /* Begin PBXFileReference section */
 		C414608C285D7835002A72F5 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
 		C41D80FF28695B6200498E02 /* DisplayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGraph.swift; sourceTree = "<group>"; };
+		7A15598E286BDFE1007F83B5 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		7A155998286C3BB4007F83B5 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		7A15599A286C40FF007F83B5 /* SearchAlternativeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlternativeViewModel.swift; sourceTree = "<group>"; };
+		7A3F36232869A98C0030B58F /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		7A4206BD286AD36400D1AA29 /* DataPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistance.swift; sourceTree = "<group>"; };
+		7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
 		C44AD81928511E9E004A8A11 /* CarbonFoodPrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarbonFoodPrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonFoodPrintApp.swift; sourceTree = "<group>"; };
 		C44AD81E28511E9E004A8A11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,7 +97,6 @@
 		C44AD81028511E9E004A8A11 = {
 			isa = PBXGroup;
 			children = (
-				C44AD84828511F3C004A8A11 /* .gitattributes.md */,
 				C44AD81B28511E9E004A8A11 /* CarbonFoodPrint */,
 				C44AD82C28511E9F004A8A11 /* CarbonFoodPrintTests */,
 				C44AD83628511E9F004A8A11 /* CarbonFoodPrintUITests */,
@@ -107,7 +118,13 @@
 			isa = PBXGroup;
 			children = (
 				C44AD81C28511E9E004A8A11 /* CarbonFoodPrintApp.swift */,
+				7A4206BD286AD36400D1AA29 /* DataPersistance.swift */,
+				7A3F36232869A98C0030B58F /* SearchResults.swift */,
+				7A155998286C3BB4007F83B5 /* SideMenu.swift */,
+				7A15598E286BDFE1007F83B5 /* Navigation.swift */,
+				7A15599A286C40FF007F83B5 /* SearchAlternativeViewModel.swift */,
 				C44AD81E28511E9E004A8A11 /* ContentView.swift */,
+				7A5DAC78285837D2009C3528 /* HamburgerMenu.swift */,
 				C44AD82028511E9F004A8A11 /* Assets.xcassets */,
 				C44AD82228511E9F004A8A11 /* Preview Content */,
 				C4DB971B285127C100D25BA8 /* DisplayView.swift */,
@@ -276,11 +293,17 @@
 			files = (
 				C414608D285D7835002A72F5 /* DisplayManager.swift in Sources */,
 				C49F2ADA2869BA2B00F62C36 /* DisplayShape.swift in Sources */,
+				7A15599B286C40FF007F83B5 /* SearchAlternativeViewModel.swift in Sources */,
 				C44AD81F28511E9E004A8A11 /* ContentView.swift in Sources */,
 				C41D810028695B6E00498E02 /* DisplayGraph.swift in Sources */,
 				C4FE48E82868D9EF0037BCD2 /* DisplayModifier.swift in Sources */,
 				C44AD81D28511E9E004A8A11 /* CarbonFoodPrintApp.swift in Sources */,
 				C4DB971C285127C100D25BA8 /* DisplayView.swift in Sources */,
+				7A4206BE286AD36400D1AA29 /* DataPersistance.swift in Sources */,
+				7A155999286C3BB4007F83B5 /* SideMenu.swift in Sources */,
+				7A5DAC79285837D2009C3528 /* HamburgerMenu.swift in Sources */,
+				7A15598F286BDFE1007F83B5 /* Navigation.swift in Sources */,
+				7A3F36242869A98C0030B58F /* SearchResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CarbonFoodPrint/Preview Content\"";
-				DEVELOPMENT_TEAM = NX8JK7B3KV;
+				DEVELOPMENT_TEAM = YU6M9S6HTK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -468,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CarbonFoodPrint/Preview Content\"";
-				DEVELOPMENT_TEAM = NX8JK7B3KV;
+				DEVELOPMENT_TEAM = YU6M9S6HTK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
