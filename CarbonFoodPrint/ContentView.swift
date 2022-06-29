@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     //@StateObject var volunteer = Volunteer(name: "", age: 0)
     @State var TheVar: String = "*This is the string variable passed from the first page*"
-    @State var TheBunch = ["Banana": 234, "Apple": 347, "Orange": 21 ]
+    //@State var TheBunch = ["Banana": 234, "Apple": 347, "Orange": 21 ]
     @State var TheList: String = "Info goes here"
     //@State var age: String = ""
     //@State var message: String = ""
@@ -35,14 +35,14 @@ struct ContentView: View {
             
         }
         TabView {
-            ARView()
+            TotalListViewer()
                 .tabItem {
-                    Image(systemName: "camera")
-                    Text("AR MODE")
+                    Image(systemName: "info")
+                    Text("LIST OF ITEMS")
                 }
             BarView(TheVar: $TheVar, TheList: $TheList)
                 .tabItem {
-                    Image(systemName: "scanner")
+                    Image(systemName: "camera")
                     Text("BARCODE SCAN")
                 }
             //CrossWalkInfo()

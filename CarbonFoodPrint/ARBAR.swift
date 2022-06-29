@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-
+/*
 struct ARView: View {
     var body: some View {
         
@@ -35,6 +35,7 @@ struct ARView: View {
             }
         }
     }
+ */
 struct BarView: View {
     @Binding var TheVar: String
     @Binding var TheList: String
@@ -59,10 +60,10 @@ struct BarView: View {
                     Text("Scan Orange").bold().modifier(ButtonDesign())
                                              .font(.caption)
                                 }//.padding(.bottom, 30)
-                NavigationLink(destination: TotalListViewer()) {
-                    Text("See total list of items").bold().modifier(ButtonDesign())
-                                             .font(.caption)
-                                }//.padding(.bottom, 30)
+                //NavigationLink(destination: TotalListViewer()) {
+                   // Text("See total list of items").bold().modifier(ButtonDesign())
+                     //                        .font(.caption)
+                       //         }//.padding(.bottom, 30)
                 
                 /*
                 NavigationLink(destination: ListViewer(TheList: $TheList)) {
@@ -106,6 +107,41 @@ struct BarView: View {
             }
         }
     }
+
+struct TotalListViewer: View {
+    //@Binding var TheList: String
+    @EnvironmentObject var man: ProductManager
+    //@State var TheChoice: Int
+    var body: some View {
+        VStack {
+        
+            Text("Information for Items")
+                .font(.headline)
+                .padding(.bottom, 30)
+            
+            HStack {
+                List {
+                ForEach(man.products) {
+                    product in
+                    VStack (alignment: .leading) {
+                        Text(product.name)
+                            .font(.largeTitle)
+                        Text(product.description)
+                            .font(.caption)
+                    }
+                }.onDelete {
+                    offset in
+                    man.products.remove(atOffsets: offset)
+                }
+            }
+            
+        }
+            Spacer()
+            Text("There are currently \(man.products.count) items in the list.")
+                            .padding(.bottom, 10)
+    }
+}
+}
 
 struct RoundedBackground: ViewModifier {
     func body(content: Content) -> some View {

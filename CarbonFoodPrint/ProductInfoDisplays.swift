@@ -11,7 +11,7 @@ import SwiftUI
 
 struct BananaViewer: View {
     @SceneStorage("productName") var productName: String = "Banana"
-    @SceneStorage("productDescrip") var productDescrip: String = "The common Banana produces 114.08 million metric tons of waste due to waste-loss."
+    @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $2.00"
     //@Binding var TheBunch: Int
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
@@ -22,7 +22,7 @@ struct BananaViewer: View {
                 .font(.headline)
                 .padding(.bottom, 30)
             HStack {
-                Text("The common banana produces 114.08 million metric tons of waste due to waste-loss.")
+                Text("Current Price: $2.00")
                 /*
                 ForEach(man.products) {
                     product in
@@ -40,7 +40,7 @@ struct BananaViewer: View {
             Button(action: {
                 man.products.append(Product(name: productName, description: productDescrip))
             }) {
-                Text("Add to Product Information List")
+                Text("Add to Product Shopping List")
                     .modifier(ButtonDesign())
             }
             Spacer()
@@ -51,7 +51,7 @@ struct BananaViewer: View {
 
 struct AppleViewer: View {
     @SceneStorage("productName") var productName: String = "Apple"
-    @SceneStorage("productDescrip") var productDescrip: String = "The common Apple produces 114.08 million metric tons of waste due to waste-loss."
+    @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $5.00"
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
     var body: some View {
@@ -60,14 +60,14 @@ struct AppleViewer: View {
                 .font(.headline)
                 .padding(.bottom, 30)
             HStack {
-                Text("The common apple produces 114.08 million metric tons of waste due to waste-loss.")
+                Text("Current Price: $5.00")
                 
                 Spacer()
             }
             Button(action: {
                 man.products.append(Product(name: productName, description: productDescrip))
             }) {
-                Text("Add to Product Information List")
+                Text("Add to Shopping List")
                     .modifier(ButtonDesign())
             }
             Spacer()
@@ -78,9 +78,10 @@ struct AppleViewer: View {
 
 struct OrangeViewer: View {
     @SceneStorage("productName") var productName: String = "Orange"
-    @SceneStorage("productDescrip") var productDescrip: String = "The common Orange produces 114.08 million metric tons of waste due to waste-loss."
+    @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $4.00"
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
+    //@State var message: String = "Added!"
     var body: some View {
         VStack {
             
@@ -88,15 +89,15 @@ struct OrangeViewer: View {
                 .font(.headline)
                 .padding(.bottom, 30)
             HStack {
-                Text("The common Orange produces 114.08 million metric tons of waste due to waste-loss.")
+                Text("Current Price: $4.00")
                 
                 Spacer()
             }
             Button(action: {
-                //Text("Added")
+                //Text(message)
                 man.products.append(Product(name: productName, description: productDescrip))
             }) {
-                Text("Add to Product Information List")
+                Text("Add to Shopping List")
                     .modifier(ButtonDesign())
             }
             Spacer()
@@ -106,33 +107,7 @@ struct OrangeViewer: View {
     }
 }
 
-struct TotalListViewer: View {
-    //@Binding var TheList: String
-    @EnvironmentObject var man: ProductManager
-    //@State var TheChoice: Int
-    var body: some View {
-        VStack {
-            Text("Information for Items")
-                .font(.headline)
-                .padding(.bottom, 30)
-            
-            HStack {
-                List {
-                ForEach(man.products) {
-                    product in
-                    VStack (alignment: .leading) {
-                        Text(product.name)
-                            .font(.largeTitle)
-                        Text(product.description)
-                            .font(.caption)
-                    }
-                }
-                }
-            }
-            Spacer()
-        }
-    }
-}
+
 
 class ProductManager: ObservableObject {
     @Published var products: [Product] = []
