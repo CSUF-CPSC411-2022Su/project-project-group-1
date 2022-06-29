@@ -59,3 +59,24 @@ struct OrangeViewer: View {
         }
     }
 }
+
+class ProductManager: ObservableObject {
+    @Published var products: [Product] = []
+    
+    init() {
+        // Add initial crosswalks for testing
+        products.append(Product(name: "Apple", description: "800 N State College Blvd., Fullerton CA 92831"))
+        products.append(Product(name: "Banana", description: "Gymnasium Campus Dr. Fullerton, CA 92831"))
+        products.append(Product(name: "Orange", description: "Campus Dr. Fullerton, CA 92831"))
+        
+        //crosswalks.append(CrossWalk(name: "McCarthy Hall", description: "The Only Campus Dr. Fullerton, CA 92831"))
+    }
+}
+
+struct Product: Identifiable {
+    /// The Identifiable protocol requires an id property that should be a unique value
+    /// UUID generates a unique random hexadecimal string
+    var id = UUID()
+    var name: String
+    var description: String
+}

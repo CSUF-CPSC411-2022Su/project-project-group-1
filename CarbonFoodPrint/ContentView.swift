@@ -15,6 +15,7 @@ struct ContentView: View {
     //@State var age: String = ""
     //@State var message: String = ""
    // @State var TheChoice: Int = 0
+    @StateObject var man = ProductManager()
     var body: some View {
         //Text("Hello, world!")
             //.padding()
@@ -52,7 +53,7 @@ struct ContentView: View {
                 //    Image(systemName: "plus")
                   //  Text("Add Crosswalk")
                // }
-        }//.environmentObject(manager)
+        }.environmentObject(man)
         
         /*
         NavigationView {
@@ -148,6 +149,7 @@ struct VolunteerDetails: View {
 
 struct ListViewer: View {
     @Binding var TheList: String
+    @EnvironmentObject var man: ProductManager
     //@State var TheChoice: Int
     var body: some View {
         VStack {
@@ -160,10 +162,14 @@ struct ListViewer: View {
                 Spacer()
             }
             HStack {
+                //Text(products.name)
+                  //  .font(.largeTitle)
+                //Text(crosswalk.description)
+                //  .font(.caption)
                 //Spacer()
                 //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
                 //ListInfo(TheList: $TheList).padding()
-                Text(TheList)
+                
                 //Text("Ages 18 - 50:")
                 //Text("6 hours").bold()
             }
