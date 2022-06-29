@@ -116,7 +116,7 @@ struct TotalListViewer: View {
     var body: some View {
         VStack {
         
-            Text("Information for Items")
+            Text("List of Items")
                 .font(.headline)
                 .padding(.bottom, 30)
             

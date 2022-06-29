@@ -10,8 +10,8 @@ import SwiftUI
 
 
 struct BananaViewer: View {
-    @SceneStorage("productName") var productName: String = "Banana"
-    @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $2.00"
+    @SceneStorage("productNameBana") var productNameBana: String = "Banana"
+    @SceneStorage("productDescripBana") var productDescripBana: String = "Current Price: $2.00"
     //@Binding var TheBunch: Int
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
@@ -39,7 +39,7 @@ struct BananaViewer: View {
                 Spacer()
             }
             Button(action: {
-                man.products.append(Product(name: productName, description: productDescrip))
+                man.products.append(Product(name: productNameBana, description: productDescripBana))
                 cost += 2
             }) {
                 Text("Add to Product Shopping List")
@@ -52,8 +52,8 @@ struct BananaViewer: View {
 }
 
 struct AppleViewer: View {
-    @SceneStorage("productName") var productName: String = "Apple"
-    @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $5.00"
+    @SceneStorage("productNameApp") var productNameApp: String = "Apple"
+    @SceneStorage("productDescripApp") var productDescripApp: String = "Current Price: $5.00"
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
     @Binding var cost: Int
@@ -68,7 +68,7 @@ struct AppleViewer: View {
                 Spacer()
             }
             Button(action: {
-                man.products.append(Product(name: productName, description: productDescrip))
+                man.products.append(Product(name: productNameApp, description: productDescripApp))
                 cost += 5
             }) {
                 Text("Add to Shopping List")
@@ -81,8 +81,8 @@ struct AppleViewer: View {
 }
 
 struct OrangeViewer: View {
-    @SceneStorage("productName") var productName: String = "Orange"
-    @SceneStorage("productDescrip") var productDescrip: String = "Current Price: $4.00"
+    @SceneStorage("productNameOran") var productNameOran: String = "Orange"
+    @SceneStorage("productDescripOran") var productDescripOran: String = "Current Price: $4.00"
     //@Binding var TheList: String
     @EnvironmentObject var man: ProductManager
     @Binding var cost: Int
@@ -100,7 +100,7 @@ struct OrangeViewer: View {
             }
             Button(action: {
                 //Text(message)
-                man.products.append(Product(name: productName, description: productDescrip))
+                man.products.append(Product(name: productNameOran, description: productDescripOran))
                 cost += 4
             }) {
                 Text("Add to Shopping List")
