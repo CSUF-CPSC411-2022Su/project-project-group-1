@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     //@StateObject var volunteer = Volunteer(name: "", age: 0)
     @State var TheVar: String = "*This is the string variable passed from the first page*"
+    @State var TheList: String = "Banana Info"
     //@State var age: String = ""
     //@State var message: String = ""
     var body: some View {
@@ -34,7 +35,7 @@ struct ContentView: View {
                     Image(systemName: "camera")
                     Text("AR MODE")
                 }
-            BarView(TheVar: $TheVar)
+            BarView(TheVar: $TheVar, TheList: $TheList)
                 .tabItem {
                     Image(systemName: "scanner")
                     Text("BARCODE SCAN")
@@ -84,6 +85,13 @@ struct Information: View {
         Text(TheVar).bold().padding()
     }
 }
+
+struct ListInfo: View {
+    @Binding var TheList: String
+    var body: some View {
+        Text(TheList).bold().padding()
+    }
+}
  
 
 struct ContentView_Previews: PreviewProvider {
@@ -119,6 +127,39 @@ struct VolunteerDetails: View {
                 //Spacer()
                 //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
                 Information(TheVar: $TheVar).padding()
+                //Text("Ages 18 - 50:")
+                //Text("6 hours").bold()
+            }
+
+            HStack {
+                //Text("Ages 51 - 60:")
+                //Text("3 hours").bold()
+            }//.padding(.bottom, 30)
+            HStack {
+                //Text("*People below 13 and over 60 are not eligible to volunteer.")
+                    //.font(.caption)
+            }
+            Spacer()
+        }
+    }
+}
+
+struct ListViewer: View {
+    @Binding var TheList: String
+    var body: some View {
+        VStack {
+            Text("Information for Bananas")
+                .font(.headline)
+                .padding(.bottom, 30)
+            HStack {
+                Text("Banana:")
+                
+                Spacer()
+            }
+            HStack {
+                //Spacer()
+                //Text(TheVar).bold().padding() //.frame(width: 100) //.padding(.bottom, 10)
+                ListInfo(TheList: $TheList).padding()
                 //Text("Ages 18 - 50:")
                 //Text("6 hours").bold()
             }
