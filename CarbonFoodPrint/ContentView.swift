@@ -15,8 +15,12 @@ struct ContentView: View {
             
             
             
-            
-            BarcodeFeature().padding(.bottom, 30)
+            BarcodeFeature()
+                .tabItem {
+                    Image(systemName: "camera")
+                    Text("Barcode Scanner ")
+                }.padding(.bottom, 30)
+                
         }
     
 }
