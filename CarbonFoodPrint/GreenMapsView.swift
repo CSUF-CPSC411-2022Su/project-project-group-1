@@ -25,7 +25,7 @@ struct GreenMapsMenuView: View {
                 //MARK: - NAVIGATION LINKS Button
                 NavigationLink(destination: GreenMapsSearchView()) {
                     Text("Open GreenMaps!").padding()
-                        .modifier(ButtonDesign())
+                        .modifier(ButtonShape())
                 }
                 Spacer()
             }
@@ -110,11 +110,11 @@ struct GreenMapsSearchView: View {
                         // NAVIGATION LINKS
                         NavigationLink(destination: GreenMapsView(location: location, finder: finder)) {
                             Text("Search!").padding()
-                                .modifier(ButtonDesign())
+                                .modifier(ButtonShape())
                         }
                     } else {
                         Text("Search!").padding()
-                            .modifier(ButtonDesign())
+                            .modifier(ButtonShape())
                     }
                 }
             }
