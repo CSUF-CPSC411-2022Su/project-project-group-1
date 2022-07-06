@@ -34,6 +34,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Daily Results", systemImage: "list.dash")
                 }
+            GreenMapsMenuView()
+                .tabItem {
+                    Image(systemName: "car")
+                    Text("Green Maps")
+                }
         }//.padding()
     }
 }
