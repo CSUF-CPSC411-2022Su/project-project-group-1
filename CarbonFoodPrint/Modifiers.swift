@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 
-struct RoundedBackground: ViewModifier {
+struct RoundBackground: ViewModifier {
     func body(content: Content) -> some View {
         content
             .background(Color.blue)
@@ -16,7 +16,7 @@ struct RoundedBackground: ViewModifier {
     }
 }
 
-struct ButtonDesign: ViewModifier {
+struct ButtonShape: ViewModifier {
     func body(content: Content) -> some View {
         content
             .modifier(RoundedBackground())
