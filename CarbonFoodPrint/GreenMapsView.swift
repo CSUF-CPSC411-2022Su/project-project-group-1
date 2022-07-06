@@ -104,7 +104,7 @@ struct GreenMapsSearchView: View {
                         message = "This location is not valid. Please add valid location information."
                     }
                     finder.find(location.zipCode)
-                    history.addSearchString(location.zipCode)
+                    history.addSearchList(location.zipCode)
                 }){
                     if (nonValid) {
                         // NAVIGATION LINKS
